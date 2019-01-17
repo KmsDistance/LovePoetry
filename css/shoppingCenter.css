@@ -1,0 +1,168 @@
+
+.product{
+    padding-top: 1.5rem;
+    background-color: #f9f9f9;
+    padding-bottom: 2.5rem;
+}
+.lineBox{
+    width: 100%;
+    margin-top: .2rem;
+    background-color: #ffffff;
+    padding: .3rem .15rem;
+}
+.lineBox h4{
+    margin: 0 .1rem .1rem .1rem;
+    padding: .1rem 0 .1rem .3rem ;
+    color: #333333;
+    font-weight: 500;
+    font-size: .4rem;
+    border-left: 2px solid #2aabff;
+}
+.line1{
+    width: 100%;
+    padding-top: .1rem;
+    border-top: .5px solid #f6f6f6;
+    display: flex;
+    justify-content: space-between;
+}
+.line1>div{
+    text-align: center;
+    padding: .1rem;
+    width: 33%;
+    /*box-shadow: 0 0 .3rem rgba(0,0,0,0.2);*/
+    /*border: 1px solid red;*/
+}
+.line1>div>div:first-child{
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+}
+.line1>div div img{
+    width:2.9rem;
+    height: auto;
+}
+.line1 h5{
+    margin: .1rem 0;
+    text-align: left;
+    color: #333333;
+    font-size: .4rem;
+    min-height: .9rem ;
+}
+.line1 p{
+    margin-top: .1rem;
+    margin-bottom: .1rem;
+    font-size: .35rem;
+    color: #666666;
+    text-align: justify;
+}
+.line1>div div:last-child{
+    text-align: left;
+}
+.line1>div div:last-child span:first-child,
+.line2>div div:last-child span:first-child
+{
+    font-size: .4rem;
+    color: #fe4f15;
+}
+.line1>div div:last-child span:last-child,
+.line2>div div:last-child span:last-child
+{
+    font-size: .3rem;
+    color: #999999;
+    padding-left: .1rem;
+}
+.line2>div div:last-child span:last-child{
+    padding-left: 1.8rem;
+}
+.line2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.line2>div{
+    width: 49%;
+    min-height: 4rem;
+    padding-top: .1rem;
+    margin-bottom: .3rem;
+    box-shadow: 0 0 .2rem rgba(0,0,0,0.1);
+}
+.line2 div h5
+{
+    margin: 5px 0;
+    color: #333333;
+    font-size: .45rem;
+    padding: 0 .1rem;
+    text-align: left;
+}
+
+.line2 div div:first-child{
+    border-radius: 5px;
+    width: 100%;
+    height: 3.1rem;
+    text-align: center;
+    overflow: hidden;
+}
+.line2 div  img{
+    text-align: center;
+    width: 4.5rem;
+    height: auto;
+}
+.line2 div p
+{
+    margin-bottom: .1rem;
+    padding: 0 .1rem;
+    color: #666666;
+    font-size: .35rem;
+    text-align: left;
+}
+.lineBox h6{
+    margin: 0;
+    padding: .2rem 0 0 .1rem;
+    font-size: .4rem;
+    text-align: center;
+    border-top: .5px solid #F6F6F6;
+    color: #333333;
+}
+.lineBox a,
+.lineBox a:visited{
+    text-decoration: none;
+}
+.lineBox h6 a{
+    color: #666666;
+    text-decoration: none;
+    font-size: .4rem;
+}
+.lineBox h6 a:visited{
+    text-decoration: none;
+}
+
+.afterLogin{
+    padding: .1rem .2rem .2rem;
+    margin-top: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+.afterLogin div:first-child{
+    /*border: 1px solid red;*/
+    line-height: 1rem;
+}
+.afterLogin img{
+    width: .56rem;
+    height: .56rem;
+}
+.afterLogin span{
+    color: #333333;
+    font-size: .35rem;
+}
+.afterLogin button.btn1{
+    width: 2rem;
+    height: 1rem;
+    line-height: .5rem;
+}
+.product{
+    margin-top: 1.5rem;
+     padding-top: .1rem;
+    padding-bottom: .5rem;
+    min-width: 10rem;
+ }

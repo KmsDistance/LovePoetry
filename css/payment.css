@@ -1,0 +1,284 @@
+
+
+.payMoney{
+    margin-top: 2rem;
+    text-align: center;
+    /* position: relative; */
+}
+#payMent{
+    padding-bottom: 1rem;
+}
+#payMent h4{
+    display: inline-block;
+    font-size: .6rem;
+    color: #333333;
+    /*border-bottom: 1px solid #e0e0e0;*/
+    margin: 0;
+}
+#payMent p{
+    /* position: absolute; */
+    top: .1rem;
+    font-size: 0.4rem;
+    display: inline-block;
+}
+#payMent span:last-child{
+    font-size: 0.4rem;
+    color: #F3AF30;
+    margin-left: .2rem;
+}
+.payType p{
+    width: 1.8rem;
+    display: inline-block;
+    color: #666666;
+    line-height: 1.2rem;
+    font-size: .4rem;
+    margin: 0;
+    vertical-align: top;
+}
+.payType{
+    text-align: left;
+    /* width: 95%; */
+    line-height: 1.2rem;
+    margin: 0 .3rem;
+    padding: 0 .3rem;
+    border-bottom: .5px solid #DCDCDC;
+}
+.payTypeQ{
+    display: flex;
+    /* width: 95%; */
+    height: 1.2rem;
+    margin: 0 .3rem;
+    padding: 0 .3rem;
+    border-bottom: .5px solid #DCDCDC;
+    justify-content: space-between;
+    align-items: center;
+}
+.payTypeQ p{
+    color: #999999;
+    font-size: .4rem;
+}
+.payTypeQ span{
+    color: #666666;
+    font-size: .4rem;
+    padding-right: .2rem;
+}
+.payTypeQ img{
+    width: .2rem;
+}
+.payMoney>div{
+    /*border-bottom: 1px solid #e0e0e0;*/
+}
+.payMoney>div .payType div{
+    display: inline-block;
+}
+.payMoney>div .payType img{
+    width: .56rem;
+    height: .56rem;
+}
+.payMoney>div .payType span{
+    color: #333333;
+    font-size: .4rem;
+    margin-left: .2rem;
+    margin-right: .4rem;
+}
+.btn1{
+    margin-top: 1rem;
+    width: 90%;
+}
+
+
+/* 优惠券弹框 */
+
+
+.express-area-box {
+    height: 9rem;
+	position: absolute;
+	bottom: -100%;
+	left: 50%;
+	z-index: 15;
+	width: 100%;
+	margin-left: -160px;
+	background-color: #fff;
+	color: #4d525d;
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    margin-left: 0px;
+}
+header h5{
+    color: #333333;
+    font-size: .4rem;
+    padding-left: .6rem;
+    line-height: 1rem;
+    margin-top: .2rem;
+}
+.express-area-box header {
+	position: relative;
+    border-radius: 6px 6px 0;
+}
+
+.express-area-box article {
+	overflow-y: scroll;
+}
+#areaBox>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .6rem;
+    line-height: 1rem;
+}
+#areaBox div div~div{
+    border: .2px solid #B9B9B9;
+    height: .5rem;
+    width: .5rem;
+    position: relative;
+}
+#areaBox>div div~div img{
+    width: .4rem;
+    position: absolute;
+    top: 25%;
+    left: 9%;
+    
+}
+/*遮罩层*/
+
+.mask {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 12;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .1);
+}
+/* 弹框 */
+.user .modal-dialog{
+    margin: 5rem .8rem 3rem .5rem ;
+}
+.user .modal-content{
+    background-color: #44b0f8;
+}
+.user .modal-footer,
+.user .modal-header{
+    border: none;
+}
+.user .modal-header{
+    background-color: #44b0f8;
+    text-align: center;
+    position: relative;
+}
+.user .modal-header h4{
+    font-size: .5rem;
+    color: #ffffff;
+    margin: 0;
+}
+.user .modal-header .closeBox{
+    position: absolute;
+    right: .6rem;
+    top: .35rem;
+    color: #ffffff !important;
+    font-size: .5rem;
+}
+.user .modal-body{
+    background-color: #44b0f8;
+    padding-bottom: .2rem;
+    text-align: center;
+}
+.user .modal-body div{
+    padding-left: .4rem;
+    margin-bottom: .2rem;
+    text-align: left;
+    display: inline-block;
+    width: 90%;
+    height: 1.2rem;
+    background-color: #68bdfa;
+    line-height: 1.2rem;
+}
+.user .modal-body div input{
+    height: 1rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding-left: .3rem;
+    color: #ffffff;
+    font-size: .4rem;
+    text-align: left;
+}
+.user .modal-body div .phoneInput{
+    width: 70%;
+}
+.user .modal-body div .code{
+    width: 100%;
+}
+.user .modal-body div .img1{
+    width: .53rem;
+    height: .56rem;
+}
+.user .modal-body div .img2{
+    width: .55rem;
+    height: .72rem;
+}
+.user .modal-body div .img3{
+    width: .48rem;
+    height: .72rem;
+}
+.user .modal-body .nth2{
+    background-color: transparent;
+    padding: 0;
+    line-height: 1.2rem;
+    margin-bottom: .2rem;
+}
+.user .modal-body .nth2 div .code{
+    width: 80%;
+}
+.user .modal-body .nth2 div{
+    background-color: #68bdfa;
+    display: inline-block;
+    width: 59%;
+    border: none;
+    text-align: left;
+}
+.user .modal-body .nth2 .btn3{
+    display: inline-block;
+    background-color: #ffffff;
+    height: 1.2rem;
+    border-radius: 1.2rem;
+    line-height: 1.2rem;
+    text-align: center;
+    color: #68bdfa;
+    font-size: .4rem;
+    width: 38%;
+}
+.user .modal-body div input::placeholder{
+    color: #ffffff;
+    font-size: .4rem;
+}
+.user .modal-footer{
+    padding-top: 0;
+    text-align: center;
+}
+.user .modal-footer button{
+    font-size: .4rem;
+    width: 90%;
+    height: 1.2rem;
+    background-color: #ffffff !important;
+    color: #44b0f8;
+    border-radius: 1.2rem;
+    margin-bottom: .2rem;
+}
+.user .modal-footer div{
+    text-align: right;
+    padding-right: .5rem;
+}
+.user .modal-footer div a{
+    color: #ffffff;
+    font-size: .35rem;
+    text-decoration: none;
+}
+.user .modal-footer div a:visited{
+    text-decoration: none;
+}
+.modal-header .prompt{
+    position:static;
+}

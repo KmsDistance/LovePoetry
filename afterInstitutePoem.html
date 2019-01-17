@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+    
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/institutePoem.css">
+
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/afterInstitutePoem.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="js/wx_share.js"></script>
+    <title>艾诗学院</title>
+    <!-- 登录后艾诗学院首页 -->
+</head>
+<body>
+	<div id="wrapper">
+        <div class="overlay"></div>
+        <!-- 侧边 -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav" id="leftNav">
+                <!-- <li class="sidebar-brand">
+                    <img src="./img/pome/logo.png" style='width: 1rem;height: 1rem;position: static'>
+                    <span style='font-size: .3rem'>18225862311</span>
+                </li>
+                <li class='remaining'>
+                    <span>剩余堡币 : 1999</span>
+                    <button>立即充值</button>
+                </li>
+                <li class='remaining1'>
+                    <span>赠送堡币 : 1999</span>
+                </li> -->
+                <li class='itemList'>
+                    <a onclick = "handleGoToRouter('myOrder.html')">
+                        <img src="img/pome/dingdan.png">
+                        <span>我的订单</span>
+                    </a>
+                </li>
+                <li class='itemList'>
+                    <a  onclick = "handleGoToRouter('collection.html')">
+                        <img src="img/pome/shoucang.png">
+                        <span>我的收藏</span>
+                    </a>
+                </li>
+                <li class='itemList'>
+                    <a onclick = "handleGoToRouter('myComments.html')">
+                        <img src="img/pome/pinglun.png">
+                        <span>我的评论</span>
+                    </a>
+                </li>
+                <li class='itemList'>
+                    <a  onclick = "handleGoToRouter('watchHistory.html')">
+                        <img src="img/pome/jilu.png">
+                        <span>观看历史</span>
+                    </a>
+                </li>
+                <li class='itemList'>
+                    <a  onclick = "handleGoToRouter('myCoupons.html')">
+                        <img src="img/pome/youhui.png">
+                        <span>我的优惠券</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 侧边栏 -->
+
+        <!-- 头部 -->
+        <div id="page-content-wrapper">
+            <div class="topTitle" style='text-align: left'>
+                <div  class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+                    <!-- <img src="./img/pome/logo.png" style='width: 1rem;height: 1rem;position: static'>
+                    <span style='font-size: .3rem'>18225862311</span> -->
+                    <p style='color:#fff;font-size: .45rem;display: inline-block;margin-left: 1.7rem'>艾诗学院</p>
+                </div>
+                <button onclick="handleshow()" class="nav-mobile-button">
+                    <img src="img/more_black.png">
+                </button>
+            </div>
+            <div  class="menuBar" style='margin-top: 1.6rem'>
+                <ul id="listMenu" class="list-unstyled" style="display: none">
+                    <li><a onclick="goIndex()">首页</a></li>
+                    <li><a onclick="goInstitutePoem()">艾诗学院</a></li>
+                    <li><a onclick="goShoppingCenter()">商城中心</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 头部效果 -->
+        <div class=' mainBody'>
+                <!-- 热门推荐 -->
+                <div class='recommended'>
+                    <!-- <p class='headings'><span>/</span> &nbsp; 热门推荐 &nbsp; <span>/</span></p>
+                    <div class='recommendedBox'>
+                        <div class='recommendedbody'>
+                            <h6>新东方成长历程</h6>
+                            <p>25周年特别回顾系列课程</p>
+                            <div class='recommendedPrice'>
+                                    <p>99堡币</p>
+                                <div>
+                                    <img src="img/pome/huang.png" style='width:.3rem'>
+                                    <span>37</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='recommendedImg'>
+                            <img src="img/pome/11.png">
+                        </div>
+                    </div> -->
+                </div>
+                <!-- 名师养成 -->
+                <div class='famousTeacher'>
+                    <!-- <p class='headings'><span>/</span> &nbsp; 名师养成 &nbsp; <span>/</span></p> -->
+                    <!-- 偶数 -->
+                    <!-- <div class='developBox'>
+                        <div class='develop'>
+                            <div class='developImg'>
+                                <img src="img/pome/baoming.png" class='baoming'>
+                                <img src="img/pome/11.png">
+                            </div>
+                            <div class='developIntro'>
+                                <h4>如何打造名师系列课程</h4>
+                                <p class='teachName'>讲师：xxx</p>
+                                <span>199堡币</span>
+                                <s>199堡币</s>
+                                <p class='countNmae'><img src="img/pome/jiang.png">&nbsp;37</p>
+                            </div>
+                        </div>
+                        <div class='develop'>
+                            <div class='developImg'>
+                                <img src="img/pome/baoming.png" class='baoming'>
+                                <img src="img/pome/11.png">
+                            </div>
+                            <div class='developIntro'>
+                                <h4>如何打造名师系列课程</h4>
+                                <p class='teachName'>讲师：xxx</p>
+                                <span>199堡币</span>
+                                <s>199堡币</s>
+                                <p class='countNmae'><img src="img/pome/jiang.png">&nbsp;37</p>
+                            </div>
+                        </div> -->
+                    </div>
+                    <!-- 奇数 -->
+                    <div class='developOdd'>
+                        <!-- <div class='developImg'>
+                            <img src="img/pome/baoming.png" class='baoming'>
+                            <img src="img/pome/11.png">
+                        </div>
+                        <div class='developIntro'>
+                            <h4>如何打造名师系列课程</h4>
+                            <p class='teachName'>讲师：xxx</p>
+                            <span>199堡币</span>
+                            <s>199堡币</s>
+                            <p style='margin:.3rem 0 0 0;display: block' class='countNmae'><img src="img/pome/jiang.png">&nbsp;37</p>
+                        </div> -->
+                    </div>
+            </div>
+            
+            <!-- 线下课程 -->
+            <div class='offline'>
+                    <!-- <p class='headings'><span>/</span> &nbsp; 线下课程 &nbsp; <span>/</span></p>
+                    <div class='levelTitle'>
+                        <h4>内部</h4>
+                    </div>
+                    <div class='developOdd'>
+                        <div class='developImg'>
+                            <img src="img/pome/11.png">
+                        </div>
+                        <div class='developIntro'>
+                            <h4>如何打造名师系列课程</h4>
+                            <p class='teachName'>讲师：xxx</p>
+                            <span>199堡币</span>
+                            <s>199堡币</s>
+                            <p style='margin:.3rem 0 0 0;display: block' class='countNmae'><img src="img/pome/jiang.png">&nbsp;37</p>
+                        </div>
+                    </div>
+                    <div class='levelTitle'>
+                        <h4>外部</h4>
+                    </div>
+                    <div class='developOdd'>
+                        <div class='developImg'>
+                            <img src="img/pome/11.png">
+                        </div>
+                        <div class='developIntro'>
+                            <h4>如何打造名师系列课程</h4>
+                            <p class='teachName'>讲师：xxx</p>
+                            <span>199堡币</span>
+                            <s>199堡币</s>
+                            <p style='margin:.3rem 0 0 0;display: block' class='countNmae'><img src="img/pome/jiang.png">&nbsp;37</p>
+                        </div>
+                    </div>
+                    <div class='levelTitle'>
+                        <h4>招商会</h4>
+                    </div>
+                    <div class='developOdd'>
+                        <div class='developImg'>
+                            <img src="img/pome/11.png">
+                        </div>
+                        <div class='developIntro'>
+                            <h4>如何打造名师系列课程</h4>
+                            <p class='teachName'>讲师：xxx</p>
+                            <span>199堡币</span>
+                            <s>199堡币</s>
+                            <p style='margin:.3rem 0 0 0;display: block' class='countNmae'><img src="img/pome/jiang.png">&nbsp;37</p>
+                        </div>
+                    </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class='beforShare'>
+        <div class="modal fade" id="mymodalShare">
+            <div class="modal-dialog">
+                <div class="modal-content" >
+                    <div class="modal-body" >
+                        <p>校长堡送你新春福袋</p>
+                        <p>线上课程免费听</p>
+                        <p>给你一次华丽的蜕变</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class='botLive' onclick="Tool.modalClose('#mymodalShare')">知道了</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#wrapper -->
+	
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript">
+    function handleshow() {//显示右侧
+        if ($("#listMenu").css("display") == 'none') {
+            $("#listMenu").css("display", "block");//show的display属性设置为block（显示）
+        } else {
+            $("#listMenu").css("display", "none");
+        }
+    }
+    $('.hamburger').click(function(){
+        $("#listMenu").css("display", "none");
+    })
+		$(document).ready(function () {
+		  var trigger = $('.hamburger'),
+		      overlay = $('.overlay'),
+		     isClosed = false;
+
+		    trigger.click(function () {
+		      hamburger_cross();      
+		    });
+
+		    function hamburger_cross() {
+
+		      if (isClosed == true) {          
+		        overlay.hide();
+		        trigger.removeClass('is-open');
+		        trigger.addClass('is-closed');
+		        isClosed = false;
+		      } else {   
+		        overlay.show();
+		        trigger.removeClass('is-closed');
+		        trigger.addClass('is-open');
+		        isClosed = true;
+		      }
+		  }
+		  
+		  $('[data-toggle="offcanvas"]').click(function () {
+		        $('#wrapper').toggleClass('toggled');
+		  });  
+		});
+	</script>
+</body>
+</html>

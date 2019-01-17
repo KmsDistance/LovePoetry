@@ -1,0 +1,91 @@
+
+.details-first-text ul li{
+    line-height: .5rem;
+}
+.details-first-text ul li p:first-child{
+    display: inline-block;
+    width: 2rem;
+    margin: 0 0 0 .4rem;
+    vertical-align: top;
+    font-size: .4rem;
+    line-height: .6rem;
+}
+.details-first-text ul li p:last-child{
+    width: 6rem;
+    display: inline-block;
+    margin: 0 0 0.2rem 0;
+    font-size: .4rem;
+    line-height: .6rem;
+}
+.details-first-text ul li p.price{
+    color: #d43731;
+}
+.details-first-text ul li p.plan a{
+    display: inline-block;
+    font-size: .4rem;
+    width: 3rem;
+    height: .9rem;
+    line-height: .9rem;
+    text-align: center;
+    border: 1px solid #cecece;
+    color: #666666;
+    text-decoration: none;
+    margin-bottom: .2rem;
+}
+.details-first-text ul li p.plan a:visited{
+    text-decoration: none;
+}
+.details-first-text ul li p.plan a.active{
+    color: #f1af48;
+    border: 1px solid #fee3c8;
+}
+.count a:first-child,
+.count a:nth-child(3){
+    position: absolute;
+    color: #333333;
+    text-align: center;
+    display: inline-block;
+    font-size: .4rem;
+    width: .7rem;
+    height: .7rem;
+    line-height: .7rem;
+}
+.count a:first-child{
+    border-right: .5px solid #cecece;
+
+}
+.count a:nth-child(3){
+    border-left: .5px solid #cecece;
+    right: 65%;
+}
+.count a:visited,
+.count a{
+    text-decoration: none;
+}
+.count{
+    position: relative;
+    display: inline-block;
+}
+.count input{
+    border: .5px solid #cecece;
+    width: 2.1rem;
+    height: .7rem;
+    text-align: center;
+}
+.payButton{
+    width: 100%;
+    text-align: center;
+}
+.payButton .btn3{
+    display: inline-block;
+    width: 3.5rem;
+    height: 1.2rem;
+    background: url("./../img/btn1.png") no-repeat;
+    background-size: 3.5rem 1.2rem;
+    margin-bottom: .5rem;
+    margin-left: .4rem;
+    color: #ffffff;
+    font-size: .45rem;
+    margin-top: .3rem;
+}
+/*加一*/

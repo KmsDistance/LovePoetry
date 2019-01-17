@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+	<meta name="format-detection" content="telephone=yes"/>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	<link rel="stylesheet" href="css/bootstrapValidator.min.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/courseDetails.css">
+
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/layer/layer.js"></script>
+	<script src="js/util.js"></script>
+	<script src="js/bootstrapValidator.min.js"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/layer/layer.js"></script>
+	<script src="js/bootstrapValidator.min.js"></script>
+	<script src="js/util.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/courseDetails.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script src="js/wx_share.js"></script>
+	<title>课程详情</title>
+	<!-- 课程详情 --> 
+</head>
+<body>
+    <div >
+		<!-- 头部 -->
+        <div class="box11" id =box>
+            <div class="title" style='position: relative;'>
+				<div style='position: absolute;'>
+					<img src="img/( 11.png" alt="">
+				</div>
+                <p style='padding-left: .6rem'>课程详情</p>
+            </div>
+		</div>
+		
+			<!-- 视频 -->
+			<div class="video" >
+				<div id="video">
+					<video src="img/birds.mp4" id="videoPlay" controls x5-playsinline="" playsinline="" webkit-playsinline="" poster="" x-webkit-airplay="allow"></video>
+				</div>
+				<img src="img/bj.jpg" id="ad" >
+				<button class="btn3" id="videoButton" >
+					<img src="img/12113.png" alt="">
+				</button>
+				<div class="videoText display-none"  onclick="baoming()">
+					<div>
+						<p>您的试看已经结束</p>
+						<p>如果您感兴趣，<span>点击去购买</span></p>
+					</div>		
+				</div>
+			</div>
+			<!-- 点赞 评论 收藏 -->
+			<div class='giveLikeBox'>
+				<div class='giveLike' style='margin-left: 5.5rem'>
+					<img src="img/pome/dz1.png">
+					<img src="img/pome/dz2.png" class="display-none">
+					<span >323</span>
+				</div>
+				<div class='giveLike collection-html-icon' >
+					<img src="img/pome/sc1.png">
+					<img src="img/pome/sc2.png" class="display-none">
+					<span>收藏</span>
+				</div>
+				<div class='giveLike comments-html-icon' onclick="handleChangeActiveContent('.comments')" >
+					<img src="img/pome/pl1.png">
+					<span></span>
+				</div>
+			</div> 
+			<!-- 课程详情头部标签 -->
+			<div class='lessonDetailsTitle'>
+				<div class="active" onclick="handleChangeActiveContent('#courseDetails')">
+					<span>课程详情</span>
+				</div>
+				<div onclick="handleChangeActiveContent('.introduce')">
+					<span>讲师介绍</span>
+				</div>
+				<div onclick="handleChangeActiveContent('.comments')" class="comments-html">
+					<span >评论()</span>
+				</div>
+			</div>
+			<div id="courseContent">
+				<!-- 课程详情内容 -->
+				<div id="courseDetails">
+					<!-- <div class="details"> -->
+						<!-- 课程名称 -->
+						<!-- <div class='lessonName'>
+							<h4>新东方成长历程25周年特别回顾</h4>
+							<p>简介简介简介简介</p>
+						</div> -->
+						<!-- 价格 -->
+						<!-- <div class="lessonPrice"> 
+							<span>199</span>堡币
+							<s> 199 </s>
+							<p>报名倒计时: 00:01:12</p>
+						</div> -->
+						<!-- 重要标签 -->
+						<!-- <div class="importantTag">
+							<div class='class'>
+								<span>课时:共6节</span>
+							</div>
+							<div class='class'>
+								<span>开课时间:2019-01-12</span>
+							</div>
+							<div class='class'>
+								<span>限制报名人数:50人</span>
+							</div>
+							<div class='class'>
+								<span>剩余名额:5人</span>
+							</div>
+							<div class='class'>
+								<span>限制报名人数:50人</span>
+							</div>
+						</div> -->
+						<!-- 系列课程 -->
+						<!-- <div class='seriesCourses'>
+							<div class='seriesTitle'>
+								<h4>系列课程</h4>
+							</div>
+							<ul class="courseListVideo">
+								<li>
+									<img src="img/pome/bofang.png">
+									<p class='active'>1.第一课程第一课程第一课程第一课程</p>
+								</li>
+								<li>
+									<img src="img/pome/bofang.png">
+									<p>2.第一课程第一课程第一课程第一课程</p>
+								</li>
+								<li>
+									<img src="img/pome/bofang.png">
+									<p>3.第一课程第一课程第一课程第一课程</p>
+								</li>
+								<li>
+									<img src="img/pome/bofang.png">
+									<p>4.第一课程第一课程第一课程第一课程</p>
+								</li>
+								<li>
+									<img src="img/pome/bofang.png">
+									<p>5.第一课程第一课程第一课程第一课程</p>
+								</li>
+								<li style='display: none'>
+									<img src="img/pome/bofang.png">
+									<p>6.第一课程第一课程第一课程第一课程</p>
+								</li>
+							</ul>
+		
+							<div class="elasticLine1 LineL display-none" onclick="handleHide()">
+								<div class="line1"></div>
+								<div class="handleDown">内容收起</div>
+								<div class="line1"></div>
+							</div>
+							<div class="elasticLine1 LineM" onclick="handleShow()">
+								<div class="line1"></div>
+								<div class="handleDown">展开更多</div>
+								<div class="line1"></div>
+							</div>
+						</div> -->
+						<!-- 团报优惠 -->
+						<!-- <div class='group'>
+							<div class='groupTitle'>
+								<h4>团报优惠</h4>
+							</div>
+							<p>两人联保价格直减<span>100</span>元
+							三人联保价格直减<span>200</span>元
+							</p>
+						</div> -->
+						<!-- 课程简介 -->
+						<!-- <div class='introduction'>
+								<div class='groupTitle'>
+										<h4>课程简介</h4>
+									</div>
+							<div></div>
+						</div> -->
+					<!-- </div> -->
+				</div>
+				<!-- 讲师简介 -->
+				<div class='introduce display-none'>
+					<h4>讲师介绍</h4>
+					<div class='courseIntro'>
+						<!-- <div>
+							<img src="img/pome/touxiang.png">
+						</div>
+						<div class='introContent'>
+							<h5>黄老师</h5>
+							<p>原同龄圈创始人，互联网营销专家 曾获得上海市政府EFG基金会支持
+								获得俞敏洪和盛希泰成立的洪泰基金等多轮投资</p>
+						</div> -->
+					</div>
+				</div>
+				<!-- 评论 -->
+				<div class='comments display-none'>
+					<!-- <div class='published'> 
+						<div>
+							<textarea placeholder="我来说几句..."></textarea>
+						</div>
+						<button>发表</button>
+					</div>
+					<h4>全部热评</h4>
+					<div class='commentsBox'>
+						<div class='commentsContent'>
+							<div class='headPortrait'>
+								<img src="img/pome/touxiang.png" >
+								<p>黄老师</p>
+							</div>
+							<div class='greatNumber active'>
+								<img src="img/pome/1.png" >
+								<img src="img/pome/2.png" style="display:none">
+								<span>32</span>
+							</div>
+						</div>
+						<p>讲得很棒，很感谢老师的分享，课程给学员学习了解经济方面的知识，这也是现在人们都需要去知道的知识</p>
+					</div>  -->
+					<!-- <div class='commentsBox'>
+						<div class='commentsContent'>
+							<div class='headPortrait'>
+								<img src="img/pome/touxiang.png" >
+								<p>黄老师</p>
+							</div>
+							<div class='greatNumber'>
+								<img src="img/pome/1.png"  style="display:none">
+								<img src="img/pome/2.png">
+								<span>32</span>
+							</div>
+						</div>
+						<p>讲得很棒，很感谢老师的分享，课程给学员学习了解经济方面的知识，这也是现在人们都需要去知道的知识</p>
+					</div> -->
+				</div>
+			</div>
+			<!-- 立即报名 -->
+			<div class='btnBox'>
+				<button class='wxBtn'>
+					<img src="img/pome/wx.png">
+					<span>咨询</span>
+				</button>
+				<!-- 立即报名 -->
+				<button class='btn' onclick='signUp.checkPermissions()'>立即报名</button>
+				<!-- 无权购买 -->
+				<!-- <button class='btn' onclick="Tool.modalOpen('#mymodalService')">立即报名</button> -->
+				<!-- 团购 -->
+				<!-- <button class='btn' onclick="Tool.modalOpen('#mymodalBulk')">立即报名</button> -->
+				<button class='btnClose' disabled="disabled" style="display: none">报名已结束</button>
+				<button id="btnOver" class='btnClose display-none' disabled="disabled">已报名</button>
+				<button id="statusOver" class='btnClose display-none' disabled="disabled">课程已下架</button>
+			</div>	
+		
+	</div>
+	<!-- 无权购买弹框 -->
+	<div class="right">
+		<div class="modal fade" id="mymodalService">
+			<div class="modal-dialog">
+				<div class="modal-content" >
+					<div class="modal-header">
+						<h4>温馨提示</h4>
+						<span onclick="Tool.modalClose('#mymodalService')">x</span>
+					</div>
+					<div class="modal-body right-body" >
+						<p>抱歉，您暂无购买此权限课程，请查看其他课程或联系客服400-667-8868</p>
+					</div>
+					<div class="modal-footer">
+						<!-- <button class='botton'>联系客服</button> -->
+						<a class='botton'  href="tel:400-667-8868">联系客服</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 三人价 -->
+		<div class="modal fade" id="mymodalBulk">
+			<div class="modal-dialog">
+				<div class="modal-content" >
+					<div class="modal-header">
+						<span onclick="Tool.modalClose('#mymodalBulk')">x</span>
+					</div>
+					<div class="modal-body right-body" id="bulkList">
+						<!-- <div class='active priceOne'>
+							<img src="img/pome/1r.png" style='width: .5rem;'>
+							<span>1人价</span>
+							<span>99.00堡币</span>
+							<img src="img/pome/gou1.png">
+						</div>
+						<div class='active priceOne'>
+							<img src="img/pome/2r.png" style='width: .5rem;'>
+							<span>2人价</span>
+							<span>99.00堡币</span>
+							<img src="img/pome/gou1.png" style='display: none'>
+						</div>
+						<div class='active priceOne'>
+							<img src="img/pome/3r.png" style='width: .5rem;'>
+							<span>3人价</span>
+							<span>99.00堡币</span>
+							<img src="img/pome/gou1.png" style='display: none'>
+						</div> -->
+					</div>
+					<div class="modal-footer">
+						<button class='botton' onclick="signUp.modalClose('#mymodalBulk','#mymodalUser')">下一步</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 同伴信息 -->
+		<div class="modal fade" id="mymodalUser">
+			<div class="modal-dialog" style='margin-top: 4rem'>
+				<div class="modal-content" >
+					<div class="modal-header">
+						<span onclick="Tool.modalClose('#mymodalUser')">x</span>
+					</div>
+					<div class="modal-body right-body" id="bulkUser">
+						<!-- <p class='companion'>请填写其他同伴的姓名、手机号</p>
+						<p class='companion'>（平台将会进行信息保密）</p>
+						<div>
+							<div class='companionMsg'>
+								<div>同伴1</div>
+								<div>
+									<input type="text" placeholder="请输入姓名">
+								</div>
+								<p>请输入正确的姓名！</p>
+							</div>
+							<div class='companionMsg'>
+								<div></div>
+								<div>
+									<input type="text" placeholder="请输入手机号">
+								</div>
+								<p>请输入正确的手机号！</p>
+							</div>
+						</div> -->
+					<!-- <div class='companionMsg'>
+							<div>同伴2</div>
+							<div>
+								<input type="text" placeholder="请输入姓名">
+							</div>
+							<p style='display:none'>请输入正确的姓名！</p>
+						</div>
+						<div class='companionMsg'>
+							<div></div>
+							<div>
+								<input type="text" placeholder="请输入手机号">
+							</div>
+							<p style='display:none'>请输入正确的手机号！</p>
+						</div>
+					</div> -->
+					<!-- <div class="modal-footer">
+						<button class='botton'>完成,去支付</button>
+						<p>报名成功后可在我的订单修改</p>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 用户登录注册 -->
+<div class="user">
+        <!-- 登录弹框 -->
+        <div class="modal fade" id="mymodalLogin">
+            <div class="modal-dialog">
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <h4>用户登录</h4>
+                        <span onclick="handleCloseLogin()">x</span>
+                    </div>
+                    <div class="modal-body" >
+                        <div>
+                            <img src="img/ren.png" class="img1">
+                            <input type="text" placeholder="请输入您的手机号" class="phoneInput" id="loginPhone" name="loginPhone">
+                        </div>
+                        <div>
+                            <img src="img/suo.png" class="img2">
+                            <input type="password" placeholder="请输入您的密码" class="phoneInput" id="loginPassword" name="loginPassword">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button  onclick="login('courseDetails')">登录</button>
+                        <div>
+                            <a href="#" onclick="handleRegister('login')">没有账号？去注册</a>
+                            <a href="#" onclick="handleForget('login')" style="margin-left: 1.8rem">忘记密码?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 注册弹框 -->
+        <div class="modal fade" id="mymodalRegistered">
+            <div class="modal-dialog">
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <h4>用户注册</h4>
+                        <span onclick="handleCloseRegister()">x</span>
+                    </div>
+                    <div class="modal-body" >
+                        <div>
+                            <img src="img/ren.png" class="img1">
+                            <input type="text" placeholder="请输入您的手机号" class="phoneInput" id="regionPhone" name="regionPhone">
+                        </div>
+                        <div class="nth2">
+                            <div>
+                                <img src="img/phone.png" class="img3">
+                                <input type="text" placeholder="请输入验证码" class="code" id="regionCode" name="regionCode">
+                            </div>
+                            <button class="btn3 btn-1" onclick="sendCode()">获取验证码</button>
+                            <span class="btn3 ji-shi" style="display: none"></span>
+                            <button class="btn3 btn-2" onclick="sendCode()" style="display: none">重新获取验证码</button>
+                        </div>
+                        <div>
+                            <img src="img/suo.png"  class="img2">
+                            <input type="password" placeholder="请设置密码" class="phoneInput" id="regionPassword" name="regionPassword">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn4" onclick="region()">注册</button>
+                        <div>
+                            <a href="#" onclick="handleLogin('registered')">已有账号？去登录</a>
+                            <a href="#" onclick="handleForget('registered')" style="margin-left: 1.8rem">忘记密码?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 忘记密码 -->
+        <div class="modal fade" id="mymodalForget">
+            <div class="modal-dialog">
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <h4>修改密码</h4>
+                        <span onclick="handleCloseForget()">x</span>
+                    </div>
+                    <div class="modal-body" >
+                        <div>
+                            <img src="img/ren.png" class="img1">
+                            <input type="text" placeholder="请输入您的手机号" class="phoneInput" id="forgetPhone" name="regionPhone">
+                        </div>
+                        <div class="nth2">
+                            <div>
+                                <img src="img/phone.png" class="img3">
+                                <input type="text" placeholder="请输入验证码" class="code" id="forgetCode" name="regionCode">
+                            </div>
+                            <button class="btn3 btn-11" onclick="sendCode()">获取验证码</button>
+                            <span class="btn3 ji-shi" style="display: none"></span>
+                            <button class="btn3 btn-22" onclick="sendCode()" style="display: none">重新获取验证码</button>
+                        </div>
+                        <div>
+                            <img src="img/suo.png"  class="img2">
+                            <input type="password" placeholder="请设置新密码" class="phoneInput" id="forgetPassword" name="regionPassword">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn4" onclick="region()">确认修改</button>
+                        <div>
+                            <a href="#" onclick="handleLogin('forget')">已有账号？去登录</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</body>
+</html>
+<script>
+
+</script>

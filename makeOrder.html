@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/makeOrder.css">
+
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/bootstrapValidator.min.js"></script>
+    <title>找好项目，到校长堡</title>
+    <!-- 确认订单页 -->
+    <style>
+    </style>
+</head>
+<body>
+    <div>
+        <div class="topTitle">
+            <a onclick="handleDetails()">
+                <img src="./img/(%2011.png">
+            </a>
+            <span>确认订单</span>
+        </div>
+    </div>
+    <div class="address">
+        <!--没有收货地址-->
+        <div>
+            <div class="line1" >
+                <a href="addAddress.html">
+                    <p>请添加收货地址</p>
+                    <img src="img/(.png" alt="">
+                </a>
+            </div>
+            <div class="line2" id="details">
+                <!--<div>
+                    <img src="img/pic.jpg" class="img-responsive">
+                </div>
+                <div>
+                    <h4>绘元识字教师账号</h4>
+                    <p>日期: 2018-11-16 16:13:44</p>
+                    <span>￥999</span>
+                    <span>x1</span>
+                </div>-->
+            </div>
+            <div class="line3" id="countPay">
+                <!--<div>
+                    <span>购买数量</span>
+                </div>
+                <div>
+                    <span>-</span>
+                    <input type="text" value="1">
+                    <span>+</span>
+                </div>-->
+            </div>
+            <div class="line3">
+                <div>
+                    <span>配送方式</span>
+                </div>
+                <div>
+                    <span style="display:inline;color: #333333;font-size: .45rem;background-color: #ffffff">快递 免邮</span>
+                </div>
+            </div>
+            <div class="line-1">
+                <div class="lineMsg">
+                    <span>买家留言 : </span>
+                    <input type="text" placeholder="选填:内容已和卖家协商确认">
+                </div>
+            </div>
+            <div class="line4" id="goodsSum">
+                <!--<p>
+                    <span>共1件商品 &nbsp;&nbsp;小计 : </span>
+                    <span>  ￥999</span>
+                </p>-->
+            </div>
+            <div class="lineLastBox">
+                <div class="lineLast">
+                    <div>
+                        <p>
+                            <span>合计金额: </span>
+                            <span> ￥999</span>
+                        </p>
+                    </div>
+                    <div>
+                        <button onclick="handleMoney()">立即支付</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--有收货地址-->
+        <div style="display: none">
+            <div class="line1-1" >
+                <div>
+                    <a href="#">
+                        <img src="img/ding.png" class="img1">
+                    </a>
+                </div>
+                <div class="addressMore">
+                    <p>
+                        <span>收货人:张三</span>
+                        <span>15656565656</span>
+                    </p>
+                    <p>收货地址:安徽省合肥市瑶海区龙岗综合经济开发区 安徽省合肥市瑶海区龙岗综合经济开发区</p>
+                    <p>(收货不方便时，可选择免费待收货服务)</p>
+                </div>
+                <div>
+                    <a href="modifyAddress.html">
+                        <img src="img/edit.png" class="img2">
+                    </a>
+                </div>
+            </div>
+            <div class="line1-2">
+                <img src="img/lan.png" class="img-responsive">
+            </div>
+            <div class="line2">
+                <div>
+                    <img src="img/pic.jpg" class="img-responsive">
+                </div>
+                <div>
+                    <h4>绘元识字教师账号</h4>
+                    <p>日期: 2018-11-16 16:13:44</p>
+                    <span>￥999</span>
+                    <span>x1</span>
+                </div>
+            </div>
+            <div class="line3">
+                <div>
+                    <span>购买数量</span>
+                </div>
+                <div>
+                    <span>-</span>
+                    <input type="text" value="1">
+                    <span>+</span>
+                </div>
+            </div>
+            <div class="line3">
+                <div>
+                    <span>配送方式</span>
+                </div>
+                <div>
+                    <span style="display:inline;color: #333333;font-size: .45rem;background-color: #ffffff">快递 免邮</span>
+                </div>
+            </div>
+            <div class="line-1">
+                <div class="lineMsg">
+                    <span>买家留言 : </span>
+                    <input type="text" placeholder="选填:内容已和卖家协商确认">
+                </div>
+            </div>
+            <div class="line4">
+                <p>
+                    <span>共1件商品 &nbsp;&nbsp;小计 : </span>
+                    <span>  ￥999</span>
+                </p>
+            </div>
+            <div class="lineLastBox">
+                <div class="lineLast">
+                    <div>
+                        <p>
+                            <span>合计金额: </span>
+                            <span> ￥999</span>
+                        </p>
+                    </div>
+                    <div>
+                        <button onclick="handleMoney()">立即支付</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function handleMoney() {
+        window.location="payment.html"
+    }
+    var url = location.search;
+    console.log(url);
+    function handleDetails() {
+        window.location="afterProductDrtails.html"+url
+    }
+    $(function(){
+        $.ajax({
+            url:baseURL + 'mall/spCart/byId'+url,
+            type:'post',
+            success:function(res){
+                console.log(res);
+                goodsId = res.goodsId;
+                var details = '';
+                var countPay= '';
+                var goodsSum = '';
+                countMoney = res.buyNum; //购买数量
+                minCount = res.minPurchaseNum;  //最小购买数量
+                price = res.price; //商品单价
+                details+=`
+                    <div>
+                    <img src="${res.goodsCover}" class="img-responsive">
+                </div>
+                <div>
+                    <h4>${res.goodsName}</h4>
+                    <p>日期: ${res.addTime}</p>
+                    <span>￥${res.price}</span>
+                    <span id="count1">x${countMoney}</span>
+                </div>`;
+                countPay += `
+                    <div>
+                        <span>购买数量</span>
+                    </div>
+                    <div>
+                        <span onclick="handleDescBuyNum()">-</span>
+                        <input type="text" value="${countMoney}" id="input-num" disabled="disabled">
+                        <span onclick="handleAddBuyNum()">+</span>
+                    </div>`;
+                goodsSum +=`
+                    <p>
+                        <span id="sum">共${countMoney}件商品 &nbsp;&nbsp;小计 : </span>
+                        <span>  ￥999</span>
+                    </p>
+                    `
+                $('#details').html(details);
+                $('#countPay').html(countPay);
+                $('#goodsSum').html(goodsSum);
+            },
+            error:function(error){
+                console.log(error);
+            }
+        })
+    })
+    function handleDescBuyNum(){//商品数量--
+        var count = $("#input-num").val();
+        if(count > minCount){
+            count--;
+            $("#input-num").val(count);
+            $("#count1").html("x"+count);
+            $("#sum").html("共"+count+"件商品 &nbsp;&nbsp;小计 : ");
+        }else layer.msg('最低购买数不能低于'+minCount)
+    }
+    function handleAddBuyNum(){//商品数量+++
+        var count = $("#input-num").val();
+        count++
+        $("#input-num").val(count);
+        $("#count1").html("x"+count);
+        $("#sum").html("共"+count+"件商品 &nbsp;&nbsp;小计 : ");
+    }
+</script>

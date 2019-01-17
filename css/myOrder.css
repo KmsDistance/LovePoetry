@@ -1,0 +1,267 @@
+
+/* 没有内容 */
+.OrderBox1{
+    text-align: center;
+    padding-top: 2.5rem;
+    background-color: #f3f3fb;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
+
+.textBox p:first-child{
+    /* display:inline-block; */
+    margin-top: .4rem;
+    font-size: .35rem;
+    color: #999999;
+}
+.textBox p:last-child{
+    display:inline-block;
+    font-size: .35rem;
+    color: #999999;
+}
+.textBox p:last-child a{
+    color: #29A7FF;
+    font-size: .35rem;
+}
+/* 头部 */
+.OrderTitle{
+    min-width: 10rem;
+    height: 1.1rem;
+    background-color: #f3f3fb;
+    padding-top: .1rem
+}
+.titleBox{
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    height: 1rem;
+}
+.titleBox li{
+    width: 2.3rem;
+    line-height: 1rem;
+    padding: 0;
+    text-align: center;
+}
+.titleBox li a{
+    color: #333333;
+    font-size: .35rem;
+}
+.titleBox li.active a{
+    display: inline-block;
+    border-bottom: 1px solid #29A7FF;
+    padding: 0 .2rem;
+    color: #29A7FF;
+}
+/* 有内容 */
+.OrderBox{
+    background-color: #f3f3fb;
+    min-height: 21rem;
+    padding-top: .1rem;
+    margin-bottom: 1.5rem;
+}
+.OrderBox>div>p{
+    line-height: .95rem;
+    color: #333333;
+    font-size: .32rem;
+    border-bottom: 1px solid #F3F3FB;
+    background-color: #ffffff;
+    padding: 0 .4rem;
+}
+.OrderBox>div{
+    margin-bottom: .2rem;
+}
+.order{
+    padding: .2rem .4rem;
+    display: flex;
+    background-color: #ffffff;
+}
+.order div:last-child{
+    margin-left: .3rem; 
+}
+.order div:first-child{
+    width: 3rem;
+    height: 1.8rem;
+    overflow: hidden;
+}
+.order img{
+    width: 3rem;
+}
+.order h5{
+    color: #333333;
+    font-size: .35rem;
+    margin-bottom: .2rem;
+}
+.order p{
+    color: #333333;
+    font-size: .29rem;
+    line-height: .5rem;
+}
+.order span{
+    color: #FA571E;
+    font-size: .29rem;
+    /* line-height: .35rem; */
+}
+.payMoneyPrice{
+    height: .97rem;
+    text-align: right;
+    padding: 0 .4rem;
+    background-color: #ffffff;
+    line-height: .97rem;
+    border-top: 1px solid #f3f3fb;
+}
+.payMoneyPrice p{
+    color: #666666;
+    font-size: .29rem;
+    display: inline-block;
+    padding-right: .2rem;
+}
+.payMoneyPrice p span{
+    font-size: .32rem;
+    color: #FA571E !important;
+}
+.payMoneyPrice a{
+    padding:.1rem .4rem ;
+    background-color: transparent;
+    border:.5px solid #29A7FF;
+    color: #29A7FF;
+    font-size: .29rem;
+    border-radius: .4rem
+}
+.payMoneyPrice>.pq{
+    padding:.1rem .4rem ;
+    background-color: transparent;
+    border:.5px solid #999999;
+    color: #999999;
+    font-size: .29rem;
+    border-radius: .4rem
+}
+.massMsg{
+    line-height: .95rem;
+    color: #333333;
+    font-size: .32rem;
+    border-bottom: .5px solid #F3F3FB;
+    background-color: #ffffff;
+    padding: 0 .3rem;
+}
+.massMsg>p{
+    display: inline-block;
+}
+.massMsg>a{
+    color: #3691df;
+    font-size: .35rem;
+    margin-left: .4rem;
+    text-decoration: underline;
+}
+/* 弹框 */
+.right .modal-dialog{
+    margin: 5rem .8rem 3rem .5rem ;
+}
+.right .modal-footer,
+.right .modal-header{
+    border: none;
+}
+.right .modal-header{
+    background-color:#2BA8FF;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    min-height: 1rem
+}
+.right .modal-header h4{
+    font-size: .5rem;
+    color: #ffffff;
+    margin: 0;
+}
+.right .modal-header span{
+    position: absolute;
+    right: .6rem;
+    top: .2rem;
+    color: #ffffff;
+    font-size: .5rem;
+}
+.right .modal-body{
+    text-align: center;
+    padding: 15px 35px;
+}
+.right .modal-body p{
+    line-height: .6rem;
+    font-size: .35rem;
+    color: #666666;
+    text-align: left;
+}
+.right .modal-body .priceOne{
+    width: 6.48rem;
+    height: 1rem;
+    border: .5px solid #dedbdb;
+    line-height: 1rem;
+    text-align: left;
+    margin-bottom: .3rem
+}
+.right .modal-body .priceOne img{
+    width: .4rem;
+    margin-left: .3rem
+}
+.right .modal-body .priceOne span:nth-child(2){
+    font-size: .4rem;
+    color: #333333;
+    margin-left: .1rem
+}
+.right .modal-body .priceOne span:nth-child(3){
+    font-size: .4rem;
+    color: #DF2F2F;
+    margin-left: .6rem;
+    margin-right: .7rem;
+}
+.right .modal-footer{
+    text-align: center;
+    padding-top: 0.3rem;
+}
+.right .modal-footer button{
+    background:linear-gradient(90deg,rgba(106,201,244,1),rgba(66,173,248,1));
+    width:3rem;
+    height:0.7rem;
+    font-size: .35rem;
+    color: #fff;
+    border-radius: 4px;
+}
+.right .modal-footer p{
+    text-align: center;
+    font-size: .3rem;
+    color: #333;
+    margin-top: .4rem;
+}
+.right .modal-body .companion{
+    text-align: center;
+    color: #333333;
+    font-size: .3rem
+}
+.right .modal-body .companionMsg{
+    margin-top: .2rem
+}
+.right .modal-body .companionMsg div:first-child{
+    width: 1.1rem;
+    display: inline-block;
+    font-size: .4rem;
+    color: #666;
+}
+.right .modal-body .companionMsg div:nth-child(2){
+    display: inline-block;
+}
+.right .modal-body .companionMsg div:nth-child(2) input{
+    border: .5px solid #dedbdb;
+    width: 4.5rem;
+    height: .75rem;
+    color: #999999;
+    font-size: .4rem;
+    padding-left: .2rem
+}
+.right .modal-body .companionMsg div:nth-child(2) input::placeholder{
+    color: #999999;
+    font-size: .4rem;
+}
+.right .modal-body .companionMsg p{
+    margin-left: 1.8rem;
+    font-size: .27rem;
+    color:#EB4040;
+}

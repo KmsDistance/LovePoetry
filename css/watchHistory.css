@@ -1,0 +1,45 @@
+
+/* 背景 */
+.watchBox{
+    width: 100%;
+    min-width: 10rem;
+    height: 100%;
+    /* position: fixed; */
+}
+.watch{
+    background-color: #F3F3FB;
+    padding-top: .1rem;
+    min-height: 21rem;
+}
+.historyBox{
+    padding:0 .4rem;
+    background-color: #fff;
+    margin-bottom: .3rem;
+}
+.historyBox>p{
+    line-height: .95rem;
+    color: #333333;
+    font-size: .32rem;
+    border-bottom: .5px solid #F3F3FB;
+}
+.history{
+    margin-top: .25rem;
+    display: flex;
+    padding-bottom: .2rem;
+}
+.history img{
+    width: 3rem;
+}
+.history div:last-child{
+    margin-left: .3rem;
+}
+.history div:last-child p{
+    font-size: .32rem;
+    color: #333;
+    line-height: .7rem;
+}
+.history div:last-child span{
+    font-size: .32rem;
+    color: #333;
+    line-height: .7rem;
+}

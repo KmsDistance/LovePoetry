@@ -1,0 +1,29 @@
+
+.personalMsg{
+    background-color: #f3f3fb;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+.personal{
+    padding: .2rem .5rem .2rem .5rem;
+    background-color:#ffffff; 
+    border-bottom: .5px solid #f3f3fb;
+}
+.personal p{
+    display: inline-block;
+    line-height: 1rem;
+    font-size: .48rem;
+}
+.personal p:first-child{
+    color: #29A8FF;
+    width: 3.4rem;
+    text-align: right;
+}
+.personal p:last-child{
+    color: #999999;
+    margin-left: .4rem;
+}
+.personalBox{
+    margin-bottom: .3rem;
+}

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="./css/itemDetails.css">
+    <link rel="stylesheet" href="./css/productDetails.css">
+
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/bootstrapValidator.min.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="js/wx_share.js"></script>
+    <title>找好项目，到校长堡</title>
+    <!-- 商品详情页面 -->
+</head>
+<body>
+<div>
+    <div class="topTitle">
+        <a onclick="goBack()">
+            <img src="./img/(%2011.png">
+        </a>
+        <span>商品详情</span>
+        <button onclick="handleshow()" class="nav-mobile-button">
+            <img src="img/more_black.png">
+        </button>
+    </div>
+    <div  class="menuBar">
+        <ul id="listMenu" class="list-unstyled" style="display: none">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="index.html#item1">自研项目</a></li>
+            <li><a href="index.html#item2">自营项目</a></li>
+            <li><a href="index.html#item3">行业服务</a></li>
+            <li><a href="institutePoem.html">艾诗学院</a></li>
+            <li><a href="shoppingCenter.html">商城中心</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div id="ad5" class="carousel slide" data-ride="carousel"
+         data-interval="3500" data-pause="null">
+        <div class="carousel-inner" id="imglist">
+            <!--<div class="item active">-->
+                <!--<img src="img/banner.jpg"/>-->
+            <!--</div>-->
+            <!--<div class="item">-->
+                <!--<img src="img/banner2.jpg"/>-->
+            <!--</div>-->
+            <!--<div class="item">-->
+                <!--<img src="img/banner.jpg"/>-->
+            <!--</div>-->
+        </div>
+        <ul class="carousel-indicators">
+            <li data-slide-to="0" data-target="#ad5" class="active"></li>
+            <li data-slide-to="1" data-target="#ad5" ></li>
+            <li data-slide-to="2" data-target="#ad5" ></li>
+        </ul>
+    </div>
+    <div class="itemDetails" id="itemDetails">
+        <!--<h4>图说有道</h4>
+        <div class="details-first-text">
+            <ul class="list-unstyled">
+                <li>
+                    <p>合作金额</p>
+                    <p class="price">￥0.2万~3万</p>
+                </li>
+                <li class="suitable">
+                    <p>适应机构</p>
+                    <p>幼儿园及各类培训机构</p>
+                </li>
+                <li class="suitable">
+                    <p>适学年龄</p>
+                    <p>3.5-15岁</p>
+                </li>
+                <li class="suitable">
+                    <p>教学方法</p>
+                    <p>动作记忆法</p>
+                </li>
+                <li class="suitable">
+                    <p>教学形式</p>
+                    <p>多媒体主题式教学</p>
+                </li>
+                <li class="suitable">
+                    <p>合作形式</p>
+                    <p class="plan">
+                        <a href="#" class="active">标准化方案</a>
+                        <a href="#">定制方案</a>
+                        <a href="#">短期方案</a>
+                    </p>
+                </li>
+            </ul>
+        </div>-->
+    </div>
+    <div class="itemDetails1">
+        <h4>商品详情</h4>
+        <div id="detailsContent"></div>
+    </div>
+</div>
+<!--弹框-->
+<div class="modal fade" id="mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <h4>用户登录</h4>
+                <span onclick="handleClose()">x</span>
+            </div>
+            <div class="modal-body" >
+                <div>
+                    <img src="img/ren.png" class="img1">
+                    <input type="text" placeholder="请输入您的手机号" class="phoneInput" id="loginPhone" name="loginPhone">
+                </div>
+                <div>
+                    <img src="img/suo.png" class="img2">
+                    <input type="password" placeholder="请输入您的密码" class="phoneInput" id="loginPassword" name="loginPassword">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="login()">登录</button>
+                <div>
+                    <a href="#" onclick="handleRegister()">没有账号？去注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="mymodal1">
+    <div class="modal-dialog">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <h4>用户注册</h4>
+                <span onclick="handleClose1()">x</span>
+            </div>
+            <div class="modal-body" >
+                <div>
+                    <img src="img/ren.png" class="img1">
+                    <input type="text" placeholder="请输入您的手机号" class="phoneInput" id="regionPhone" name="regionPhone">
+                </div>
+                <div class="nth2">
+                    <div>
+                        <img src="img/phone.png" class="img3">
+                        <input type="text" placeholder="请输入验证码" class="code" id="regionCode" name="regionCode">
+                    </div>
+                    <button onclick="sendCode()" id="btn1">获取验证码</button>
+                    <span id="ji-shi" style="display: none"></span>
+                    <button onclick="sendCode()" style="display: none" id="btn2">重新获取验证码</button>
+                </div>
+                <div>
+                    <img src="img/suo.png"  class="img2">
+                    <input type="password" placeholder="请设置密码" class="phoneInput" id="regionPassword" name="regionPassword">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn4" onclick="region()">注册</button>
+                <div>
+                    <a href="#" onclick="handleLogin()">已有账号？去登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹框3-->
+<div class="modal fade" id="mymodal3">
+    <div class="modal-dialog">
+        <div class="modal-content" >
+            <div class="modal-body" >
+                <p>请拨打电话</p>
+                <span>400-667-8868</span>
+            </div>
+            <div class="modal-footer">
+                <button class="btn1" onclick="handleClose3()">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹框4-->
+<div class="modal fade" id="mymodal4">
+    <div class="modal-dialog">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <h4>加盟咨询</h4>
+                <span onclick="handleClose4()">x</span>
+            </div>
+            <div class="modal-body" >
+                <div class="line2">
+                    <img src="img/14.png" class="img1">
+                    <input type="text" placeholder="姓名" id="userName">
+                </div>
+                <div class="line3">
+                    <img src="img/shou.png" class="img2">
+                    <input type="text" placeholder="手机号" id="userPhone">
+                </div>
+                <div class="line4">
+                    <span>项目名称</span>
+                    <select id="itemName">
+                        <option id="itemName1">图说有道</option>
+                        <option>图说有道</option>
+                        <option>图说有道</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn1" onclick="consultation()">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    // 弹框1
+    function handleMymodal(){
+        $("#mymodal").modal("toggle");
+
+    }
+    function handleClose(){
+        $("#mymodal").modal("toggle").hide();
+    }
+    // 没有账号
+    function handleRegister(){
+        $("#mymodal").modal("toggle").hide();
+        $("#mymodal1").modal("toggle");
+    }
+    //已有账号
+    function handleLogin() {
+        $("#mymodal").modal("toggle");
+        $("#mymodal1").modal("toggle").hide();
+    }
+    // 弹框2
+    function handleMymodal1(){
+        $("#mymodal1").modal("toggle");
+
+    }
+    function handleClose1(){
+        $("#mymodal1").modal("toggle").hide();
+    }
+    // 弹框3
+    function handleMymodal3(){
+        $("#mymodal3").modal("toggle");
+    }
+    function handleClose3(){
+        $("#mymodal3").modal("toggle").hide();
+    }
+    // 弹框4
+    function handleMymodal4(){
+        $("#mymodal4").modal("toggle");
+    }
+    function handleClose4(){
+        $("#mymodal4").modal("toggle").hide();
+    }
+    // 返回上一页
+    function goBack() {
+        window.location='shoppingCenter.html'
+    }
+    // 显示菜单
+    function handleshow() {
+        if ($("#listMenu").css("display") == 'none') {
+
+            $("#listMenu").css("display", "block");//show的display属性设置为block（显示）
+
+        } else {
+
+            $("#listMenu").css("display", "none");
+
+        }
+    }
+    // 数据
+    var url1 = search().id;
+    console.log(url1)
+    $(function(){
+        $.ajax({
+            url:baseURL + 'mall/goods/byId',
+            type:'post',
+            data:{"id":url1},
+            success:function(res){
+                // console.log(res);
+                var carousel = '';//页面轮播
+                var imgList = res.goodsImgs;
+                var cooperatesList = res.goodsCooperates;
+                for(var i=0;i<imgList.length;i++){
+                    console.log()
+                    console.log(imgList[i].url)
+                    if(i<1){
+                        carousel += `
+                            <div class="item active">
+                                <img src="${imgList[i].url}">
+                            </div>`;
+                    }else{
+                        carousel += `
+                            <div class="item">
+                                <img src="${imgList[i].url}">
+                            </div>`;
+                    }
+                }
+                $('#imglist').html(carousel);
+                var goodsLabels = res.goodsLabels;
+                minCount = res.minPurchaseNum;
+                var goodsList =`
+                    <h4>${res.name}</h4>
+                    <div class="details-first-text">
+                        <ul class="list-unstyled">`;
+                for(var i=0;i<goodsLabels.length;i++){
+                    if(i==0){
+                        goodsList+=`
+                        <li>
+                            <p>${goodsLabels[i].name}</p>
+                            <p class="price">${goodsLabels[i].content}</p>
+                        </li>`
+                    }else{
+                        goodsList+=`
+                        <li>
+                            <p>${goodsLabels[i].name}</p>
+                            <p>${goodsLabels[i].content}</p>
+                        </li>`
+                    }
+                }
+
+                goodsList += `
+                    <li class="suitable">
+                            <p>合作形式</p>
+                            <p class="plan">`
+                for(var i=0;i<cooperatesList.length;i++){
+                    cooperatesId = cooperatesList[i].id
+                    goodsList += `
+                         <a onclick="handleshow1(${cooperatesList[i].id})" id="active${cooperatesList[i].id}">${cooperatesList[i].name}</a>
+                         <input type="hidden" id="inputId${cooperatesList[i].id}" value="${cooperatesList[i].id}">
+                         <input type="hidden" id="inputPrice" value="${cooperatesList[i].price}">`;
+                }
+                goodsList+=`
+                            </p>
+                        </li>
+                        <li class="suitable">
+                            <p>数量</p>
+                            <p class="count">
+                                <a onclick="handleDescBuyNum()">-</a>
+                                <input type="text" value="${minCount}" id="input-num">
+                                <a onclick="handleAddBuyNum()">+</a>
+                                <span>件</span>
+                            </p>
+                        </li>
+                        <li class="payButton">
+                            <button  onclick="handleMymodal()" class="btn3">立即购买</button>
+                        </li>
+                    </ul>
+                </div>`;
+                // var count = $("#countBuy").val();
+                $("#itemDetails").html(goodsList);
+                $("#detailsContent").html(res.details);
+
+            },
+            error:function(error){
+                console.log(error);
+            }
+        })
+        $.ajax({
+            type:"post",
+            url: baseURL + 'front/project/getComboboxProject',
+            success:function(res){
+                console.log(res.rows);
+                var itemList = res.rows;
+                var itemName = '';
+                for(var i=0;i<itemList.length;i++){
+                    itemName += `
+                    	<option id="itemName1" value="${itemList[i].id}">${itemList[i].projectName}</option>
+                    	`;
+                }
+                $('#itemName').html(itemName)
+            },
+            error:function(error){
+                console.log(error);
+            }
+        })
+    })
+    function consultation(){
+        var userId = sessionStorage.getItem("userId");
+        var userName = $("#userName").val();
+        var userPhone = $("#userPhone").val();
+        var itemName = $("#itemName").val();
+        console.log(userName);
+        console.log(itemName);
+        var reg=/^1[3-9][0-9]{9}$/;
+        var reg1 = /^[\u4e00-\u9fa5]{2,8}$/;
+        if (userName!=""&&reg1.test(userName)){
+            if (userPhone!=""&&reg.test(userPhone)){
+                $.ajax({
+                    type:"post",
+                    url: baseURL + 'front/project/consultationProject',
+                    data:{
+                        customerId:userId ,
+                        customerName:userName,
+                        customerPhone:userPhone,
+                        projectId:itemName,
+                    },
+                    success:function(res){
+                        console.log(res);
+                        if(res.status==200){
+                            layer.msg("提交成功！");
+                            $("#mymodal4").modal("toggle").hide();
+                        }else{
+                            layer.msg("提交失败！")
+                        }
+                    },
+                    error:function(error){
+                        console.log(error)
+                    }
+                })
+            }else{
+                layer.msg("您输入的手机号有误!")
+            }
+        }else{
+            layer.msg("请输入您的真实姓名!")
+        }
+    }
+    function handleDescBuyNum(){//商品数量--
+        var count = $("#input-num").val();
+        if(count > minCount){
+            count--;
+            $("#input-num").val(count);
+        }else layer.msg('最低购买数不能低于'+minCount)
+    }
+    function handleAddBuyNum(){//商品数量+++
+        var count = $("#input-num").val();
+        count++
+        console.log($("#input-num").val())
+      $("#input-num").val(count);
+    }
+    function handleshow1(id){
+        console.log(id)
+        var inputId = $("#inputId"+id).val();
+        var inputPrice = $("#inputPrice").val();
+        console.log(inputId,inputPrice);
+        console.log($("#active"+id).val());
+
+        $("#active"+id).addClass("active");
+        $('#active'+inputId).siblings('a').removeClass("active");
+        $(".price").html(inputPrice)
+    }
+
+    var reg=/^1[3-9][0-9]{9}$/;
+    //发送验证码
+    function sendCode() {
+        var regionPhone = $('#regionPhone').val();
+        if(regionPhone!="" && reg.test(regionPhone)){
+            $.ajax({
+                type:"post",
+                url:baseURL+'/system/customer/validateCustomerByPhone',
+                data:{phone:regionPhone},
+                success:function (res) {
+                    if(res.status == 200){
+                        $.ajax({
+                            type:"post",
+                            url:baseURL+'/system/customer/sendCode',
+                            data:{phone:regionPhone},
+                            success:function (res) {
+                                if(res.status == 200){
+                                    layer.msg("验证码发送成功!");
+                                    $("#btn1").hide();
+                                    $("#ji-shi").show().html("3");
+                                    var timer = setInterval(Countdown,1000);
+
+                                    var i=3;
+                                    function Countdown(){
+                                        if(i>1){
+                                            i--;
+                                            $("#ji-shi").html(i);
+                                        } else{
+                                            clearInterval(timer);
+                                            $("#ji-shi").hide()
+                                            $("#btn2").show();
+                                            $("#btn1").hide();
+                                        }
+                                    }
+                                }else{
+                                    layer.msg("验证码发送失败,请稍后重试!");
+                                }
+                            },
+                        })
+                    }else{
+                        layer.msg("该手机号已注册!");
+                    }
+                },
+            })
+
+        }else{
+            layer.msg("请输入正确手机号格式！");
+        }
+    }
+
+    //注册
+    function region() {
+        var regionPhone = $('#regionPhone').val();
+        var regionCode = $('#regionCode').val();
+        var regionPassword = $('#regionPassword').val();
+        if(regionCode == ""){
+            layer.msg("请输入验证码!")
+            return
+        }
+        if(regionPhone!="" && reg.test(regionPhone)){
+            $.ajax({
+                type:"post",
+                url:baseURL+'/system/customer/save',
+                data:{phone:regionPhone,code:regionCode,password:regionPassword},
+                success:function (res) {
+                    if(res.status == 200){
+                        layer.msg("注册成功！");
+                        $("#mymodal1").modal("toggle").hide();
+                        $("#mymodal").modal("toggle");
+                    }else{
+                        layer.msg("注册失败！");
+                    }
+                },
+            })
+        }else{
+            layer.msg("请输入正确手机号格式！");
+        }
+    }
+
+    //登录
+    function login(){
+        var loginPhone = $('#loginPhone').val();
+        var loginPassword = $('#loginPassword').val();
+        if(loginPassword == ""){
+            layer.msg("请输入密码!");
+            return
+        }
+        if(loginPhone!="" && reg.test(loginPhone)){
+            $.ajax({
+                type:"post",
+                url:baseURL+'/system/customer/login',
+                data:{phone:loginPhone,password:loginPassword},
+                success:function (res) {
+                    if(res.status == 200){
+                        var userId = res.data.id;
+                        layer.msg("登录成功!");
+                        window.location='afterShopping.html?userId='+userId;
+                    }else{
+                        layer.msg("登录失败!");
+                    }
+                },
+            })
+        }else{
+            layer.msg("请输入正确手机号格式！");
+        }
+    }
+
+    function search(){
+        var searchObj={}
+        if(location.search!=""){
+            var search=location.search.slice(1);//"_ijt=uius89iamtsiffau6gdjhdkjmn"
+            if(search.indexOf("&")!=-1){
+                var arr=search.split("&");
+                for(var str of arr){
+                    var [key,value]=str.split("=");
+                    if(!(key in searchObj))
+                        searchObj[key]=value
+                    else
+                        searchObj[key]=[].concat(searchObj[key],value);
+                }
+            }else{
+                var [key,value]=search.split("=");
+                searchObj[key]=value;
+            }
+        }
+        return searchObj;
+    }
+</script>
+<style>
+    /*弹框4*/
+    #mymodal4 .modal-content{
+        background-color: #FFFFFF;
+    }
+    #mymodal4 .modal-content .modal-header{
+        background-color: #1E9FFF;
+        /*padding-bottom: 1.3rem;*/
+        /*border-radius: 6px;*/
+
+    }
+    #mymodal4 .modal-content .modal-body{
+        position: relative;
+    }
+    #mymodal4 .modal-content .modal-body .line2,
+    #mymodal4 .modal-content .modal-body .line3,
+    #mymodal4 .modal-content .modal-body .line4{
+        background-color: #FFFFFF;
+        border: 1px solid #c2c2c2;
+        border-radius: 4px;
+    }
+    #mymodal4 .modal-content .modal-body .line4 span,
+    #mymodal4 .modal-content .modal-body .line4 select{
+        color: #999999;
+        font-size: .4rem;
+        margin-right: .3rem;
+    }
+    #mymodal4 .modal-content .modal-body .line4 select{
+        border: none;
+        outline: none;
+        width: 55%;
+        margin-right: 0;
+        text-align: center;
+    }
+    #mymodal4 .modal-content .modal-body .line4 select option{
+        width: 50%;
+        text-align: center;
+    }
+    #mymodal4 .modal-content .modal-body .line2{
+        /*margin-top: .7rem;*/
+    }
+    #mymodal4 .modal-content .modal-body .line2 input,
+    #mymodal4 .modal-content .modal-body .line3 input{
+        color: #999999;
+    }
+    #mymodal4 .modal-content .modal-body .line2 input::placeholder,
+    #mymodal4 .modal-content .modal-body .line3 input::placeholder{
+        color: #999999;
+    }
+    #mymodal4 .modal-content .modal-footer{
+        text-align: center;
+    }
+    #mymodal4 .modal-content .modal-footer .btn1{
+        background-color: #1E9FFF;
+        width: 70%;
+        color: #FFFFFF;
+        border-radius: 4px;
+        font-size: .4rem;
+    }
+    .modal-dialog{
+        margin: 5rem .8rem 3rem .5rem ;
+    }
+    .topTitle a>img{
+        width: .21rem;
+        height: .35rem;
+        top: .6rem;
+        left: .3rem;
+    }
+    /*弹框3*/
+    #mymodal3 .modal-dialog{
+        margin: 5rem .8rem 3rem .5rem ;
+    }
+    #mymodal3 .modal-content{
+        background-color: #ffffff;
+    }
+    #mymodal3 .modal-header{
+        border: none;
+    }
+    #mymodal3 .modal-header{
+        min-height: .6rem;
+        padding: .2rem;
+        text-align: center;
+        position: relative;
+    }
+    #mymodal3 .modal-header span{
+        display: inline-block;
+        width: .4rem;
+        height: .4rem;
+        position: absolute;
+        right: .6rem;
+        top: .2rem;
+        color: #333333;
+        font-size: .5rem;
+    }
+    #mymodal3 .modal-body{
+        text-align: center;
+        color: #333333;
+        padding-bottom: .6rem;
+    }
+    #mymodal3 .modal-body p{
+        font-size: .45rem;
+    }
+    #mymodal3 .modal-body span{
+        font-size: .5rem;
+    }
+    #mymodal3 .modal-footer .btn1{
+        background-color: #1E9FFF;
+        width: 2rem;
+        height: 1rem;
+        border-radius: 4px;
+        color: #FFFFFF;
+    }
+    .modal-dialog{
+        margin: 5rem .8rem 3rem .5rem ;
+    }
+    .modal-content{
+        background-color: #44b0f8;
+    }
+    .modal-footer,
+    .modal-header{
+        border: none;
+    }
+    .modal-header{
+        text-align: center;
+        position: relative;
+    }
+    .modal-header h4{
+        font-size: .5rem;
+        color: #ffffff;
+        margin: 0;
+    }
+    .modal-header span{
+        position: absolute;
+        right: .6rem;
+        top: .35rem;
+        color: #ffffff;
+        font-size: .5rem;
+    }
+    .modal-body{
+        padding-bottom: .2rem;
+        text-align: center;
+    }
+    .modal-body div{
+        padding-left: .4rem;
+        text-align: left;
+        display: inline-block;
+        margin-bottom: .4rem;
+        width: 90%;
+        height: 1.2rem;
+        background-color: #68bdfa;
+        line-height: 1.2rem;
+    }
+    .modal-body div input{
+        height: 1rem;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        padding-left: .3rem;
+        color: #ffffff;
+        font-size: .4rem;
+    }
+    .modal-body div .phoneInput{
+        width: 70%;
+    }
+    .modal-body div .code{
+        width: 100%;
+    }
+    .modal-body div .img1{
+        width: .53rem;
+        height: .56rem;
+    }
+    .modal-body div .img2{
+        width: .55rem;
+        height: .72rem;
+    }
+    .modal-body div .img3{
+        width: .48rem;
+        height: .72rem;
+    }
+    .modal-body .nth2{
+        background-color: transparent;
+        padding: 0;
+        line-height: 1.2rem;
+    }
+    .modal-body .nth2 div .code{
+        width: 80%;
+    }
+    .modal-body .nth2 div{
+        background-color: #68bdfa;
+        display: inline-block;
+        line-height: 1.2rem;
+        width: 55%;
+    }
+    .modal-body .nth2 button,
+    .modal-body .nth2 span{
+        display: inline-block;
+        background-color: #ffffff;
+        height: 1rem;
+        border-radius: 4px;
+        line-height: 1rem;
+        color: #68bdfa;
+        font-size: .4rem;
+        width: 42%;
+        text-align: center;
+    }
+    ::placeholder{
+        color: #ffffff;
+        font-size: .4rem;
+    }
+    .modal-footer{
+        padding-top: 0;
+        text-align: center;
+    }
+    .modal-footer button{
+        font-size: .4rem;
+        width: 90%;
+        height: 1.2rem;
+        background-color: #ffffff;
+        color: #44b0f8;
+        border-radius: 1.2rem;
+        margin-bottom: .2rem;
+    }
+    .modal-footer div{
+        text-align: right;
+        padding-right: .5rem;
+    }
+    .modal-footer div a{
+        color: #ffffff;
+        font-size: .35rem;
+        text-decoration: none;
+    }
+    .modal-footer div a:visited{
+        text-decoration: none;
+    }
+</style>
+</html>

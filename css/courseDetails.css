@@ -1,0 +1,679 @@
+
+
+
+/* 视频 */
+.video{
+    margin-top: 1.5rem;
+    width: 100%;
+    height: 6.3rem;
+    overflow: hidden;
+    position: relative;
+}
+.video video{
+    width: 100%;
+}
+.video>img{
+    position: absolute;
+    width: 320px;
+    height: 200px;
+    top: 0;
+}
+.btn1{
+    /*width: 3.5rem;*/
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    z-index: 0;
+    position: absolute;
+    top: 62%;
+    left: 5%;
+}
+.btn1 img{
+    width: 1rem;
+}
+.video .btn3{
+    width: 3.5rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    z-index: 600;
+    position: absolute;
+    top: 77%;
+    left: 4%;
+}
+.video .btn3 img{
+    width: 100%;
+}
+/* 点赞 评论 收藏 */
+.giveLikeBox{
+    height: 1rem;
+    display: flex;
+    align-items: center;
+
+}
+.giveLike img{
+    margin-left: .4rem;
+    width: .43rem;
+    height: .45rem;
+}
+.giveLike span{
+    color: #666666;
+    font-size: .35rem;
+}
+/* 课程详情 头部标签 */
+.lessonDetailsTitle{
+    display: flex;
+    align-items: center;
+}
+.lessonDetailsTitle div{
+    width: 3.4rem;
+    height: 1rem;
+    line-height:1rem;
+    text-align: center;
+    background: linear-gradient(89deg,rgba(92,185,248,1),rgba(71,177,250,1),rgba(41,168,255,1));
+    box-sizing: border-box;
+}
+.lessonDetailsTitle div~div{
+    border-left: .5px solid #ffffff;
+}
+.lessonDetailsTitle div.active{
+    background: #fff;
+    border-top:.04px solid #29A8FF;
+}
+.lessonDetailsTitle div.active span{
+    color: #29A8FF;
+}
+.lessonDetailsTitle div span{
+    color: #fff;
+    font-size: .43rem;
+}
+/* 课程简介内容 */
+.lessonName{
+    padding: 0.3rem .6rem .2rem .6rem ;
+    border-bottom: .5px solid #d9d9d9;
+}
+.lessonName h4{
+    font-size: .35rem;
+    color: #333333;
+    /* margin-left: .6rem; */
+    /* padding-top: .2rem; */
+    padding-bottom: .2rem
+}
+.lessonName p{
+    color: #999999;
+    font-size: .3rem;
+    /* margin-left: .6rem */
+}
+/* 课程价格 */
+.lessonPrice{
+    padding: .25rem .6rem;
+    font-size: .35rem;
+    color: #666;
+}
+.lessonPrice  span{
+    color: #E73232;
+    font-size: .4rem;
+    margin-right: .08rem
+}
+.lessonPrice #ending{
+    font-size: .3rem;
+    display: inline-block;
+    margin-right: .08rem;
+    color:#999;
+    width:3rem;
+    height: .5rem;
+    line-height: .5rem;
+    text-align: center;
+    margin-left: .5rem;
+    border: .5px solid #f3f3f3
+}
+.lessonPrice  s{
+    color: #999;
+    font-size: .3rem;
+    margin-left: .2rem;
+}
+.lessonPrice p {
+    display: inline-block;
+    font-size: .3rem;
+    color: #EF671C;
+    margin-left: .3rem;
+    width: 4rem;
+    height: .5rem;
+    line-height: .5rem;
+    text-align: center;
+    border: .5px solid #EF671C
+}
+/* 重要标签 */
+.importantTag{
+    background-color: #F3F3F3;
+    padding: .2rem .8rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: .3rem
+}
+.importantTag div{
+    width: 4rem;
+    line-height: .5rem
+}
+.class img{
+    width: .32rem;
+    height: .32rem;
+}
+.importantTag span{
+    color: #999999;
+    font-size: .3rem
+}
+/* 系列课程 */
+.seriesCourses{
+    background-color: #F4F4F4;
+    padding: .3rem 0 0 0;
+}
+.seriesTitle{
+    border-bottom: .5px dashed #D5D4D4 ;
+    /* line-height: 1rem; */
+    padding-bottom: .2rem;
+}
+.seriesCourses h4{
+    font-size:0.43rem;
+    color: #29A8FF;
+    border-left:2px solid #29A8FF;
+    margin-left: .6rem;
+    padding-left: .1rem
+}
+ul li{
+    padding-left: .6rem;
+    line-height: 1rem;
+    border-bottom: .5px dashed #D5D4D4 ;
+}
+ul li img{
+    width: .6rem;
+}
+ul li p{
+    display: inline-block;
+    color: #666;
+    font-size:.35rem; 
+    margin-left: .2rem
+}
+ul li p.active{
+    color: #29A8FF;
+}
+
+/*内容收起  展开*/
+.elasticLine1{
+    /* margin-top: .2rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.line1{
+    width:1.5rem;
+    border-top: 1px solid #29A8FF;
+}
+.handleDown{
+    line-height: 1rem;
+    color: #29A8FF;
+    width: 2rem;
+    font-size: .37rem;
+    text-align: center;
+}
+.Introduction{
+    margin-top:.2rem; 
+    border-top: 5px solid #eae8e9;
+    border-bottom: 5px solid #eae8e9;
+    margin-bottom: .2rem;
+}
+.Introduction img{
+    width: 100%;
+}
+.Introduction p{
+    margin: 0;
+    color: #666666;
+    font-size: .4rem;
+    line-height: .8rem;
+    padding: 0 .3rem .3rem .6rem;
+}
+/* 团报优惠 */
+.group{
+    background-color: #F4F4F4;
+    margin-top: .3rem;
+    padding: .3rem 0;
+}
+.groupTitle{
+    padding-bottom: .2rem;
+    /* height: 1rem !important; */
+}
+.groupTitle h4{
+    font-size:0.43rem;
+    color: #29A8FF;
+    border-left:2px solid #29A8FF;
+    margin-left: .6rem;
+    padding-left: .1rem
+}
+.group p{
+    color: #333333;
+    font-size: .35rem;
+    padding-left: .6rem
+}
+.group p span{
+    color: #E73232;
+    font-size: .4rem;
+}
+/* 课程简介 */
+.introduction{
+    width: 100%;
+    margin-top: .3rem;
+    margin-bottom: 1.5rem;
+}
+.introduction div:last-child{
+    margin-top: .1rem;
+    width: 100%;
+    min-height: 4rem;
+    text-align: center;
+}
+.introduction div:last-child img{
+    width: 100%;
+}
+/* 讲师介绍 */
+.introduce{
+    margin-bottom: 1.5rem;
+    margin-top: .3rem;
+    padding: 0 1rem;
+    width: 100%;
+    min-height:4.27rem;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.introduce h4,
+.comments h4{
+    margin: 0;
+    padding-top: .3rem; 
+    font-size: .35rem;
+    color: #29A8FF;
+    /* margin-top: .5rem; */
+    margin-bottom: .5rem
+}
+.courseIntro{
+    display: flex;
+    align-items: center;
+}
+.courseIntro img{
+    width: 1.93rem;
+    height: 1.93rem;
+    border-radius: 50%;
+}
+.introContent{
+    color: #999999;
+    margin-left: .4rem;
+    /* width:3.47rem; */
+}
+.introContent h5{
+    font-size: .27px;
+    color: #666;
+    margin-bottom: .2rem
+}
+.introContent p{
+    font-size: .16rem;
+}
+/* 评论 */
+.comments{
+    margin-bottom: 1.5rem;
+    margin-top: .3rem;
+    padding: 0 .6rem;
+}
+.published{
+    padding: 0 0 0.3rem 0rem;
+    text-align:right;
+}
+.published div{
+    width: 8.75rem;
+    border: 1px solid #dddddd;
+    margin-bottom: .3rem
+}
+.published textarea{
+    padding: .2rem;
+    width: 8.7rem;
+    height: 1.5rem;
+    border: none;
+    resize: none;
+    outline: none;
+}
+.published button{
+    background:linear-gradient(90deg,rgba(106,201,244,1),rgba(66,173,248,1));
+    width:2rem;
+    height:0.7rem;
+    font-size: .35rem;
+    color: #fff;
+    border-radius: 4px;
+}
+.comments > div >p{
+    padding: 0 0 0 1.1rem;
+    font-size: .3rem;
+    color: #666; 
+}
+.commentsBox{
+    border-bottom: .5px solid #e1e1e1;
+    padding-bottom: .4rem;
+    margin-bottom: .4rem
+}
+.commentsContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: .35rem
+}
+.headPortrait img{
+    width: 1rem;
+    height: 1rem;
+}
+.headPortrait p{
+    color: #666;
+    font-size: .3rem;
+    display: inline-block
+}
+.greatNumber img{
+    width: .27rem;
+}
+.greatNumber span{
+    color: #666;
+    font-size: .3rem
+}
+.commentsContent .active span{
+    color: #EF7A33
+}
+/* 立即报名 */
+.btnBox{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: right;
+}
+.wxBtn img{
+    width: .6rem;
+}
+.btn,.btnClose{
+    width: 80% ;
+    height: 1.5rem;
+    font-size: .4rem;
+    background:#5BBBF8;
+    background-size: 100% 100%;
+    color: #fff;
+    border-radius: 0;
+}
+.btn:visited,.btn:link{
+    outline: none;
+    color: #fff;
+}
+.btnClose{
+    background-color: #D5D4D4;
+    color: #666;
+}
+.wxBtn{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20% ;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.5rem;
+    height: 1.5rem;
+    font-size: .3rem;
+    background: #5BBBF8;
+    color: #fff;
+    border-right: .02rem solid #fff !important;
+}
+/* 弹框 */
+.right .modal-dialog{
+    margin: 5rem .8rem 3rem .5rem ;
+}
+.right .modal-footer,
+.right .modal-header{
+    border: none;
+}
+.right .modal-header{
+    background-color:#2BA8FF;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    min-height: 1rem
+}
+.right .modal-header h4{
+    font-size: .5rem;
+    color: #ffffff;
+    margin: 0;
+}
+.right .modal-header span{
+    position: absolute;
+    right: .6rem;
+    top: .2rem;
+    color: #ffffff;
+    font-size: .5rem;
+}
+#mymodalUser .modal-body{
+    height: 10rem;
+    overflow: scroll;
+}
+.right .right-body{
+    text-align: center;
+    padding: 15px 35px;
+}
+.right .modal-body p{
+    line-height: .6rem;
+    font-size: .35rem;
+    color: #666666;
+    text-align: left;
+}
+.right .modal-body .priceOne{
+    width: 6.48rem;
+    height: 1rem;
+    border: .5px solid #dedbdb;
+    line-height: 1rem;
+    text-align: left;
+    margin-bottom: .3rem
+}
+.right .modal-body .priceOne img{
+    width: .4rem;
+    margin-left: .3rem
+}
+.right .modal-body .priceOne span:nth-child(2){
+    font-size: .4rem;
+    color: #333333;
+    margin-left: .1rem
+}
+.right .modal-body .priceOne span:nth-child(3){
+    font-size: .4rem;
+    color: #DF2F2F;
+    margin-left: .6rem;
+    margin-right: .7rem;
+}
+.right .modal-footer{
+    text-align: center;
+    padding-top: 0.3rem;
+}
+.right .modal-footer .botton{
+    display: inline-block;
+    background:linear-gradient(90deg,rgba(106,201,244,1),rgba(66,173,248,1));
+    width:3rem;
+    height:0.7rem;
+    font-size: .35rem;
+    color: #fff;
+    line-height: .7rem;
+    border-radius: 4px;
+}
+.right .modal-footer p{
+    text-align: center;
+    font-size: .3rem;
+    color: #333;
+    margin-top: .4rem;
+}
+.right .modal-body .companion{
+    text-align: center;
+    color: #333333;
+    font-size: .3rem
+}
+.right .modal-body .companionMsg{
+    margin-top: .2rem
+}
+.right .modal-body .companionMsg div:first-child{
+    width: 1.1rem;
+    display: inline-block;
+    font-size: .4rem;
+    color: #666;
+}
+.right .modal-body .companionMsg div:nth-child(2){
+    display: inline-block;
+}
+.right .modal-body .companionMsg div:nth-child(2) input{
+    border: .5px solid #dedbdb;
+    width: 4.5rem;
+    height: .75rem;
+    color: #999999;
+    font-size: .4rem;
+    padding-left: .2rem
+}
+.right .modal-body .companionMsg div:nth-child(2) input::placeholder{
+    color: #999999;
+    font-size: .4rem;
+}
+.right .modal-body .companionMsg p{
+    margin-left: 1.8rem;
+    font-size: .27rem;
+    color:#EB4040;
+}
+
+
+/* 弹框 */
+.user .modal-dialog{
+    margin: 5rem .8rem 3rem .5rem ;
+}
+.user .modal-content{
+    background-color: #44b0f8;
+}
+.user .modal-footer,
+.user .modal-header{
+    border: none;
+}
+.user .modal-header{
+    background-color: #44b0f8;
+    text-align: center;
+    position: relative;
+}
+.user .modal-header h4{
+    font-size: .5rem;
+    color: #ffffff;
+    margin: 0;
+}
+.user .modal-header span{
+    position: absolute;
+    right: .6rem;
+    top: .35rem;
+    color: #ffffff;
+    font-size: .5rem;
+}
+.user .modal-body{
+    background-color: #44b0f8;
+    padding-bottom: .2rem;
+    text-align: center;
+}
+.user .modal-body div{
+    padding-left: .4rem;
+    text-align: left;
+    display: inline-block;
+    margin-bottom: .4rem;
+    width: 90%;
+    height: 1.2rem;
+    background-color: #68bdfa;
+    line-height: 1.2rem;
+}
+.user .modal-body div input{
+    height: 1rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding-left: .3rem;
+    color: #ffffff;
+    font-size: .4rem;
+}
+.user .modal-body div .phoneInput{
+    width: 80%;
+}
+.user .modal-body div .code{
+    width: 100%;
+}
+.user .modal-body div .img1{
+    width: .53rem;
+    height: .56rem;
+}
+.user .modal-body div .img2{
+    width: .55rem;
+    height: .72rem;
+}
+.user .modal-body div .img3{
+    width: .48rem;
+    height: .72rem;
+}
+.user .modal-body .nth2{
+    background-color: transparent;
+    padding: 0;
+    line-height: 1.2rem;
+}
+.user .modal-body .nth2 div .code{
+    width: 80%;
+}
+.user .modal-body .nth2 div{
+    background-color: #68bdfa;
+    display: inline-block;
+    width: 59%;
+}
+.user .modal-body .nth2 .btn3{
+    display: inline-block;
+    background-color: #ffffff;
+    height: 1.2rem;
+    border-radius: 1.2rem;
+    line-height: 1.2rem;
+    text-align: center;
+    color: #68bdfa;
+    font-size: .4rem;
+    width: 38%;
+}
+.user .modal-body div input::placeholder{
+    color: #ffffff;
+    font-size: .4rem;
+}
+.user .modal-footer{
+    padding-top: 0;
+    text-align: center;
+}
+.user .modal-footer button{
+    font-size: .4rem;
+    width: 90%;
+    height: 1.2rem;
+    background-color: #ffffff;
+    color: #44b0f8;
+    border-radius: 1.2rem;
+    margin-bottom: .2rem;
+}
+.user .modal-footer div{
+    text-align: right;
+    padding-right: .5rem;
+}
+.user .modal-footer div a{
+    color: #ffffff;
+    font-size: .35rem;
+    text-decoration: none;
+}
+.user .modal-footer div a:visited{
+    text-decoration: none;
+}
+.videoText{
+    position:absolute;
+    z-index:1000;
+    color: #fff;
+    top: 40%;
+    left:30%;
+    /* background-color: rgba(118, 97, 113, .5); */
+}
+.videoText span{
+    color:#5BBBF8;
+}

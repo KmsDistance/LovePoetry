@@ -1,0 +1,43 @@
+
+
+.code{
+    margin-top: 2rem;
+}
+/* 上部分 下部分 */
+.code-up, 
+.code-down {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; 
+}
+.code-up ul{
+    padding-left: 1.5rem
+}
+.code-up ul li, 
+.code-down ul li {
+    line-height: 0.7rem;
+    list-style-type: none ;
+}
+.code-up ul li span,
+.code-down ul li span  {
+    font-size: 0.5rem;
+}
+/* 二维码边框 */
+.code-center{ 
+    width: 100%;
+    text-align: center;
+}
+.center-border{
+    /* margin: 0 auto; */
+    display: inline-block;
+    text-align: center;
+    width: 6.1rem;
+    height: 6.4rem;
+    background-image: url('../img/code/border2x.png');
+    background-size: 6.1rem 6.4rem;
+    background-repeat: no-repeat;
+    padding: 0.1rem;
+}
+.center-border img{
+    width: 98%;
+    height: 98%;
+}

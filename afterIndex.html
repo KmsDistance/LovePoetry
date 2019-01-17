@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+    
+    <link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="./css/index.css">
+
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/util.js"></script>
+	<script src="js/main.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="js/wx_share.js"></script>
+    <title>校长堡</title>
+</head>
+<body>
+	<div id="wrapper">
+        <div class="overlay"></div>
+        <!-- 侧边 -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav" id="leftNav">
+                <!-- <li class="sidebar-brand">
+                    <img src="./img/pome/logo.png" style='width: 1rem;height: 1rem;position: static'>
+                    <span style='font-size: .3rem'>18225862311</span>
+                </li>
+                <li class='remaining'>
+                    <span>剩余堡币 : 1999</span>
+                    <button>立即充值</button>
+                </li>
+                <li class='remaining1'>
+                    <span>赠送堡币 : 1999</span> -->
+                </li>
+                <li class='itemList'>
+                    <a onclick = "handleGoToRouter('myOrder.html')">
+                        <img src="img/pome/dingdan.png">
+                        <span>我的订单</span>
+                    </a>
+                </li>
+                <li class='itemList'>
+                    <a  onclick = "handleGoToRouter('collection.html')">
+                        <img src="img/pome/shoucang.png">
+                        <span>我的收藏</span>
+                    </a>
+                </li>
+                <li class='itemList'>
+                    <a onclick = "handleGoToRouter('myComments.html')">
+                        <img src="img/pome/pinglun.png">
+                        <span>我的评论</span>
+                    </a>
+                </li>
+                <li class='itemList'>
+                    <a  onclick = "handleGoToRouter('watchHistory.html')">
+                        <img src="img/pome/jilu.png">
+                        <span>观看历史</span>
+                    </a>
+                </li>
+                <li class='itemList'>
+                    <a  onclick = "handleGoToRouter('myCoupons.html')">
+                        <img src="img/pome/youhui.png">
+                        <span>我的优惠券</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 侧边栏 -->
+
+        <!-- 头部 -->
+        <div id="page-content-wrapper">
+            <div class="topTitle" style='text-align: left'>
+                <div  class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+                    <img src="./img/pome/logo.png" style='margin-left:.2rem;width: 1rem;height: 1rem;position: static'>
+                    <span style='font-size: .3rem'></span>
+                    <p style='color:#fff;font-size: .45rem;display: inline-block;margin-left: 2rem'>首页</p>
+                </div>
+                <button onclick="handleshow()" class="nav-mobile-button">
+                    <img src="img/more_black.png">
+                </button>
+            </div>
+            <div  class="menuBar">
+                <ul id="listMenu" class="list-unstyled" style="display: none">
+                    <li><a onclick="goIndex()">首页</a></li>
+                    <li><a onclick="goInstitutePoem()">艾诗学院</a></li>
+                    <li><a onclick="goShoppingCenter()">商城中心</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 头部效果 -->
+        <div class=' mainBody' style='min-width: 10rem;'>
+            <div class="container">
+            </div>
+            <!--自研项目   s~ -->
+            <div class="itemTitle1" id="item3">
+                <h4>自研项目</h4>
+                <p>专注低幼段素质教育</p>
+                <div class="item1" id="selfStudyProject">
+    
+                </div>
+            </div>
+            <!--自研项目   e~ -->
+    
+            <!--自营项目 s~ -->
+            <div class="itemTitle1" id="item4">
+                <h4>自营项目</h4>
+                <p>专注低幼段素质教育</p>
+                <div class="item1" id="selfSupportProject">
+    
+                </div>
+            </div>
+            <!--自营项目 e~ -->
+    
+            <!--行业服务 s~ -->
+            <div class="itemTitle1" id="serverProject">
+                <h4>行业服务</h4>
+                <p>专注低幼段素质教育</p>
+                <div class="item1" id="item1">
+    
+                </div>
+                <div class="item2" id="item2">
+    
+                </div>
+            </div>
+            <!--行业服务 e~ -->
+            <!-- 页尾 s~ -->
+            <!-- 页尾 e~ -->
+        </div>
+        <!-- 悬浮按钮 -->
+        <div class="suspension">
+            <div onclick="handleMymodal2()">
+                <img src="img/iphone.png">
+            </div>
+            <div onclick="handleMymodal3()">咨询</div>
+        </div>
+        <div class="user">
+                <!-- 登录弹框 -->
+                <div class="modal fade" id="mymodalLogin">
+                    <div class="modal-dialog">
+                        <div class="modal-content" >
+                            <div class="modal-header">
+                                <h4>用户登录</h4>
+                                <span onclick="handleCloseLogin()">x</span>
+                            </div>
+                            <div class="modal-body" >
+                                <div>
+                                    <img src="img/ren.png" class="img1">
+                                    <input type="text" placeholder="请输入您的手机号" class="phoneInput" id="loginPhone" name="loginPhone">
+                                </div>
+                                <div>
+                                    <img src="img/suo.png" class="img2">
+                                    <input type="password" placeholder="请输入您的密码" class="phoneInput" id="loginPassword" name="loginPassword">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button onclick="login()">登录</button>
+                                <div>
+                                    <a href="#" onclick="handleRegister('login')">没有账号？去注册</a>
+                                    <a href="#" onclick="handleForget('login')" style="margin-left: 1.8rem">忘记密码?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 注册弹框 -->
+                <div class="modal fade" id="mymodalRegistered">
+                    <div class="modal-dialog">
+                        <div class="modal-content" >
+                            <div class="modal-header">
+                                <h4>用户注册</h4>
+                                <span onclick="handleCloseRegister()">x</span>
+                            </div>
+                            <div class="modal-body" >
+                                <div>
+                                    <img src="img/ren.png" class="img1">
+                                    <input type="text" placeholder="请输入您的手机号" class="phoneInput" id="regionPhone" name="regionPhone">
+                                </div>
+                                <div class="nth2">
+                                    <div>
+                                        <img src="img/phone.png" class="img3">
+                                        <input type="text" placeholder="请输入验证码" class="code" id="regionCode" name="regionCode">
+                                    </div>
+                                    <button class="btn3 btn-1" onclick="sendCode()">获取验证码</button>
+                                    <span class="btn3 ji-shi" style="display: none"></span>
+                                    <button class="btn3 btn-2" onclick="sendCode()" style="display: none">重新获取验证码</button>
+                                </div>
+                                <div>
+                                    <img src="img/suo.png"  class="img2">
+                                    <input type="password" placeholder="请设置密码" class="phoneInput" id="regionPassword" name="regionPassword">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn4" onclick="region()">注册</button>
+                                <div>
+                                    <a href="#" onclick="handleLogin('registered')">已有账号？去登录</a>
+                                    <a href="#" onclick="handleForget('registered')" style="margin-left: 1.8rem">忘记密码?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 忘记密码 -->
+                <div class="modal fade" id="mymodalForget">
+                    <div class="modal-dialog">
+                        <div class="modal-content" >
+                            <div class="modal-header">
+                                <h4>修改密码</h4>
+                                <span onclick="handleCloseForget()">x</span>
+                            </div>
+                            <div class="modal-body" >
+                                <div>
+                                    <img src="img/ren.png" class="img1">
+                                    <input type="text" placeholder="请输入您的手机号" class="phoneInput" id="forgetPhone" name="regionPhone">
+                                </div>
+                                <div class="nth2">
+                                    <div>
+                                        <img src="img/phone.png" class="img3">
+                                        <input type="text" placeholder="请输入验证码" class="code" id="forgetCode" name="forgetCode">
+                                    </div>
+                                    <button class="btn3 btn-11" onclick="forgetCode()">获取验证码</button>
+                                    <span class="btn3 ji-shi1" style="display: none"></span>
+                                    <button class="btn3 btn-22" onclick="forgetCode()" style="display: none">重新获取验证码</button>
+                                </div>
+                                <div>
+                                    <img src="img/suo.png"  class="img2">
+                                    <input type="password" placeholder="请设置新密码" class="phoneInput" id="forgetPassword" name="regionPassword">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn4" onclick="region()">确认修改</button>
+                                <div>
+                                    <a href="#" onclick="handleLogin('forget')">已有账号？去登录</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!--弹框4-->
+        <div class="modal fade" id="mymodal4">
+            <div class="modal-dialog">
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <h4>加盟咨询</h4>
+                        <span onclick="handleClose3()">x</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="line2">
+                            <img src="img/14.png" class="img1">
+                            <input type="text" placeholder="姓名" id="userName">
+                        </div>
+                        <div class="line3">
+                            <img src="img/shou.png" class="img2">
+                            <input type="text" placeholder="手机号" id="userPhone">
+                        </div>
+                        <div class="line4">
+                            <span>项目名称</span>
+                            <select id="itemName">
+                                <option id="itemName1">图说有道</option>
+                                <option>图说有道</option>
+                                <option>图说有道</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn1" onclick="consultation()">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class='beforShare'>
+        <div class="modal fade" id="mymodalShare">
+            <div class="modal-dialog">
+                <div class="modal-content" >
+                    <div class="modal-body" >
+                        <p>校长堡送你新春福袋</p>
+                        <p>线上课程免费听</p>
+                        <p>给你一次华丽的蜕变</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class='botLive' onclick="Tool.modalClose('#mymodalShare')">知道了</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#wrapper -->
+	
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript">
+    function handleshow() {//显示右侧
+        if ($("#listMenu").css("display") == 'none') {
+            $("#listMenu").css("display", "block");//show的display属性设置为block（显示）
+        } else {
+            $("#listMenu").css("display", "none");
+        }
+    }
+    $('.hamburger').click(function(){
+        $("#listMenu").css("display", "none");
+    })
+		$(document).ready(function () {
+		  var trigger = $('.hamburger'),
+		      overlay = $('.overlay'),
+		     isClosed = false;
+
+		    trigger.click(function () {
+		      hamburger_cross();      
+		    });
+
+		    function hamburger_cross() {
+
+		      if (isClosed == true) {          
+		        overlay.hide();
+		        trigger.removeClass('is-open');
+		        trigger.addClass('is-closed');
+		        isClosed = false;
+		      } else {   
+		        overlay.show();
+		        trigger.removeClass('is-closed');
+		        trigger.addClass('is-open');
+		        isClosed = true;
+		      }
+		  }
+		  
+		  $('[data-toggle="offcanvas"]').click(function () {
+		        $('#wrapper').toggleClass('toggled');
+		  });  
+        });
+        function checkKey(){
+		if (event.keyCode==34){
+			alert("自定义动作");
+			event.returnValue=false;
+		}
+    }
+    var afterInstitutePoemURL = search();
+var userInfo = getUserInfo();//获取用户信息
+console.log(userInfo)
+// if (!userInfo) { 
+//     login('institutePoem');
+// }
+// 用户名   用户id  用户充值堡币  赠送堡币      电话      is校长        is教师      项目id
+if(getUserInfo()){
+    var { userName, id, rechargePrice, givePrice, phone, isCooperation, isTeacher, projectId } = userInfo;//对象解构 用户信息
+}
+	$(function(){
+        if (!getUserId()) { 
+        location.href = 'index.html';
+        return 
+    }
+        // Tool.modalOpen('#mymodalShare');
+        var userphone = phone.substring(0, 3) + '****' + phone.substring(7);
+        var htmlUserInfo = `
+            <li class="sidebar-brand">
+                <img src="./img/pome/logo.png" style='width: 1rem;height: 1rem;position: static'>
+                <span style='font-size: .4rem'>${userphone}</span>
+            </li>
+            <li class='remaining'>
+                <span>剩余堡币 : ${rechargePrice}</span>
+                <button onclick = "handleGoToRouter('topUp.html')">立即充值</button>
+            </li>
+            <li class='remaining1'>
+                <span>赠送堡币 : ${givePrice}</span>
+            </li>    `;
+    $('#leftNav').prepend(htmlUserInfo);//渲染侧边栏导航
+    $('.animated').html(//头部电话号码
+                        `<img src="./img/pome/logo.png" style='margin-left:.2rem;width: 1rem;height: 1rem;position: static'>
+                        <span style='font-size: .3rem'>${userphone}</span>
+                        <p style='color:#fff;font-size: .45rem;display: inline-block;margin-left: 1.3rem'>首页</p>`); 
+		$.post(baseURL + 'front/project',function(result) {
+			if(result != null) {
+				var selfStudyList = result.selfStudyList;
+				var selfSupportList = result.selfSupportList;
+				var serverList = result.serverList;
+
+				var selfStudy = '';
+				var selfSupportProject = '';
+//				var serverProject = '<h4>行业服务</h4><p>专注低幼段素质教育</p>';
+				var item1 ='';
+				var item2 ='';
+
+                //自研项目
+                console.log(selfStudyList);
+                for(var i = 0; i < selfStudyList.length; i++) {
+                    
+                    var projectRemarks = selfStudyList[i].projectRemarks;
+                    if (projectRemarks.length > 20) {
+                        projectRemarks = projectRemarks .substring(0,20)+"..."
+                    }
+                    if(selfStudyList[i].id == 14){
+                        selfStudy += '<div><a href="#"><div><img src="'+ selfStudyList[i].indexImg1 +'"></div><h5>'+selfStudyList[i].projectName+'</h5><p>'+ projectRemarks +'</p></a></div>';
+                    }else{
+                        selfStudy += '<div onclick="handleDeTails('+selfStudyList[i].id+')"><a href="#"><div><img src="'+ selfStudyList[i].indexImg1 +'"></div><h5>'+selfStudyList[i].projectName+'</h5><p>'+ projectRemarks +'</p></a></div>';
+                    }
+                }
+                //自营项目
+                for(var i = 0; i < selfSupportList.length; i++){
+                    var projectRemarks = selfSupportList[i].projectRemarks;
+                    if(projectRemarks.length > 20){
+                        projectRemarks = projectRemarks .substring(0,20)+"..."
+                    }
+                    selfSupportProject += '<div onclick="handleDeTails('+selfSupportList[i].id+')"><a href="#"><div style="height:3.7rem"><img class="selfSupportList" src="'+ selfSupportList[i].indexImg1 +'"></div><h5>'+selfSupportList[i].projectName+'</h5><p>'+ projectRemarks +'</p></a></div>';
+                }
+                //行业服务
+                for(var i = 0; i < serverList.length; i++){
+                    var projectRemarks = serverList[i].projectRemarks;
+                    if(projectRemarks.length > 20){
+                        projectRemarks = projectRemarks .substring(0,20)+"..."
+                    }
+                    if(i <= 1){
+                        item1 += '<div onclick="handleDeTails('+serverList[i].id+')"><a href="#"><div><img src="'+ serverList[i].indexImg1 +'"></div><h5>'+serverList[i].projectName+'</h5><p>'+ projectRemarks +'</p></a></div>';
+                    }
+                    if(i > 1){
+                        item2 += '<div onclick="handleDeTails('+serverList[i].id+')"><a href="#"><div><img src="'+ serverList[i].indexImg1 +'"></div><h5>'+serverList[i].projectName+'</h5><p>'+ projectRemarks +'</p></a></div>';
+                    }
+                }
+            }
+			$('#selfStudyProject').html(selfStudy);
+            $('#selfSupportProject').html(selfSupportProject);
+            $('#item1').html(item1);
+            $('#item2').html(item2);
+		},'json');
+		$.ajax({
+            type:"post",
+            url: baseURL + 'front/project/getComboboxProject',
+			success:function(res){
+                console.log(res.rows);
+                var itemList = res.rows;
+                var itemName = '';
+                for(var i=0;i<itemList.length;i++){
+                    itemName += `
+                    	<option id="itemName1" value="${itemList[i].id}">${itemList[i].projectName}</option>
+                    	`;
+				}
+				$('#itemName').html(itemName)
+            },
+			error:function(error){
+				console.log(error);
+            }
+		})
+	});
+    function consultation(){//加盟咨询 
+        var userId = sessionStorage.getItem("userId");
+        var userName = $("#userName").val();
+        var userPhone = $("#userPhone").val();
+        var itemName = $("#itemName").val();
+        console.log(userName);
+        console.log(itemName);
+        var reg=/^1[3-9][0-9]{9}$/;
+        var reg1 = /^[\u4e00-\u9fa5]{2,8}$/;
+        if (userName!=""&&reg1.test(userName)){
+            if (userPhone!=""&&reg.test(userPhone)){
+                $.ajax({
+                    type:"post",
+                    url: baseURL + 'front/project/consultationProject',
+                    data:{
+                        customerId:userId ,
+                        customerName:userName,
+                        customerPhone:userPhone,
+                        projectId:itemName,
+                    },
+					success:function(res){
+                        console.log(res);
+                        if(res.status==200){
+                            layer.msg("提交成功！");
+                            $("#mymodal4").modal("toggle").hide();
+						}else{
+                            layer.msg("提交失败！")
+						}
+                    },
+					error:function(error){
+                        console.log(error)
+					}
+                })
+            }else{
+                layer.msg("您输入的手机号有误!")
+            }
+        }else{
+            layer.msg("请输入您的真实姓名!")
+        }
+    }
+
+    // 跳转到项目详情页
+    function handleDeTails(projectId) {
+        window.location.href="itemDetails.html?id="+projectId;
+    }
+	function getDetail(img_Id){
+		$.ajax({
+			url: 'http://127.0.0.1:8080/coupon/byid/'+img_Id,
+			type: 'get',
+			dataType:'json',
+			success: function(data) {
+				var htmlCont = data.content;
+				layer.open({		
+					type: 1,
+					title: "优惠券详情",
+					shadeClose: true,
+					area: ['90%', '70%'], //宽高
+					content: htmlCont
+				});
+			}			
+		});
+	}
+	function handleMymodal2(){//打开弹出电话
+		$("#mymodal3").modal("toggle");
+	}
+	function handleClose2(){//关闭弹出电话
+	$("#mymodal3").modal("toggle").hide();
+	}
+   function handleMymodal3(){//打开加盟咨询
+        $("#mymodal4").modal("toggle");
+    }
+   function handleClose3(){//关闭加盟咨询
+       $("#mymodal4").modal("toggle").hide();
+   }
+    function handleshow(){//导航右侧隐藏显示
+        if($("#listMenu").css("display")=='none'){
+            $("#listMenu").css("display","block");//show的display属性设置为block（显示）
+        }else{
+            $("#listMenu").css("display","none");
+        }
+    }
+	</script>
+</body>
+</html>

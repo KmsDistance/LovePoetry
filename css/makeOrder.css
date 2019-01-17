@@ -1,0 +1,200 @@
+.topTitle img{
+    width: .21rem;
+    height: .35rem;
+    top: .6rem;
+    left: .3rem;
+}
+.address{
+    background-color: #f4f6f3;
+    width: 100%;
+    height: 100%;
+    /*position: fixed;*/
+    padding-top: 1.5rem;
+    padding-bottom: 6rem;
+}
+.address div.line1 img{
+    width: .21rem;
+    height: .35rem;
+    position: absolute;
+    right: 0;
+    top: .8rem;
+}
+.address div.line1{
+    background-color: #fff;
+    padding: 0 .4rem;
+}
+.address div.line1 p{
+    margin: 0;
+}
+.address div.line1 a{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: .5rem .3rem;
+    color: #333333;
+    font-size: .45rem;
+    text-decoration: none;
+}
+.address div.line1 a:visited{
+    text-decoration: none;
+}
+.line2{
+    padding: .4rem .2rem;
+    display: flex;
+}
+.line2 div img{
+    width: 3rem;
+    height: 3rem;
+}
+.line2 div:last-child{
+    margin-left: .4rem;
+}
+.line2 div:last-child h4{
+    margin: 0;
+    padding-bottom: .25rem;
+    color: #333333;
+    font-size: .45rem;
+}
+.line2 div:last-child p{
+    color: #999999;
+    font-size: .35rem;
+    margin-bottom: 1.3rem;
+}
+.line2 div:last-child span:nth-child(3){
+    color: #fd5706;
+    font-size: .45rem;
+}
+.line2 div:last-child span:last-child{
+    color: #333333;
+    font-size: .4rem;
+    padding-left: 3.5rem;
+}
+.line3,
+.line-1{
+    background-color: #ffffff;
+    padding: .5rem .3rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f6f6f6;
+}
+.line3 div:first-child span{
+    color: #333333;
+    font-size: .45rem;
+}
+.line3 div:last-child span{
+    display: inline-block;
+    width: .7rem;
+    height: .7rem;
+    background-color: #f9f9f9;
+    text-align: center;
+    line-height: .7rem;
+    color: #999999;
+    font-size: .5rem;
+}
+.line3 div:last-child input{
+    width: .7rem;
+    height: .7rem;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+.line4{
+    padding: .5rem .3rem .3rem .3rem;
+    background-color: #ffffff;
+}
+.line4 p{
+    text-align: right;
+    color: #333333;
+    font-size:.4rem;
+}
+.line4 p span:last-child{
+    color: #fd5706;
+    font-size: .45rem;
+}
+.lineLastBox{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+.lineLast{
+    text-align: right;
+    background-color: #ffffff;
+}
+.lineLast div{
+    display: inline-block;
+    text-align: right;
+}
+.lineLast div:first-child{
+    line-height: 1.3rem;
+    text-align: right;
+    width: 65%;
+    margin-right: .2rem;
+}
+.lineLast div:first-child p{
+    margin: 0;
+}
+.lineLast div:first-child p span:last-child{
+    color: #fd5706;
+    font-size: .45rem;
+}
+.lineLast div:last-child button{
+    width: 2.6rem ;
+    height: 1.3rem;
+    background: url("../img/btn2.png") no-repeat;
+    background-size: 2.6rem 1.3rem;
+    color: #ffffff;
+    font-size: .4rem;
+}
+.line-1 .lineMsg span{
+    color: #333333;
+    font-size: .45rem;
+}
+.line-1>.lineMsg>input{
+    height: .7rem;
+    width: 7rem;
+    border: none;
+    outline: none;
+    color: #333333;
+    font-size: .4rem;
+    padding-left: .2rem;
+}
+::placeholder{
+    color: #999999;
+    font-size: .4rem;
+}
+.line1-1{
+    background-color: #ffffff;
+    padding:.4rem .3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.line1-1 .img1{
+    width: .5rem;
+    height: .62rem;
+}
+.line1-1 .img2{
+    width: .58rem;
+    height: .55rem;
+}
+.addressMore{
+    padding: 0.2rem .2rem;
+}
+.addressMore p{
+    margin: 0;
+    font-size: .35rem;
+}
+.addressMore p:first-child{
+    padding-bottom: .1rem;
+    font-size: .4rem;
+}
+.addressMore p:first-child span:last-child{
+    padding-left: 2.8rem;
+}
+.addressMore p:nth-child(2){
+    font-size: .38rem;
+}
+.addressMore p:last-child{
+    font-size: .35rem;
+    color: #fea944;
+}

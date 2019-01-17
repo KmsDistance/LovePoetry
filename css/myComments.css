@@ -1,0 +1,84 @@
+
+
+/* 没有内容 */
+.OrderBox1{
+    text-align: center;
+    padding-top: 2.5rem;
+    background-color: #f3f3fb;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
+
+.textBox p:first-child{
+    /* display:inline-block; */
+    margin-top: .4rem;
+    font-size: .35rem;
+    color: #999999;
+}
+.textBox p:last-child{
+    display:inline-block;
+    font-size: .35rem;
+    color: #999999;
+}
+.textBox p:last-child a{
+    color: #29A7FF;
+    font-size: .35rem;
+}
+
+/* myComments */
+.commentsBox{
+    width: 100%;
+    min-width: 10rem;
+    height: 100%;
+    background-color: #F3F3FB;
+}
+.comments{
+    padding-top: .1rem;
+    min-height: 21rem;
+}
+.myCommentsBox{
+    margin-bottom: .3rem;
+}
+.myCommentsBox .content{
+    min-height: .95rem;
+    line-height: .6rem;
+    background-color: #fff;
+    padding:0 .4rem;
+}
+.myCommentsBox .content>p{
+    padding-top: .2rem;
+    color: #333333;
+    font-size: .32rem;
+}
+.myCommentsBox>p{
+    padding:0 .4rem;
+    color: #999999;
+    font-size: .32rem;
+    line-height: .6rem;
+    line-height: .9rem;
+    background-color: #fff;
+    margin-bottom: .4rem;
+}
+.myComments{
+    padding:0 .4rem;
+    margin-top: .25rem;
+    display: flex;
+    padding-bottom: .25rem;
+}
+.myComments img{
+    width: 3rem;
+}
+ .myComments div:last-child{
+    margin-left: .3rem;
+}
+.myComments div:last-child p{
+    font-size: .32rem;
+    color: #333;
+    line-height: .6rem;
+}
+.myComments div:last-child span{
+    font-size: .32rem;
+    color: #FA571E;
+    line-height: .6rem;
+}

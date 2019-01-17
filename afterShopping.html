@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+    
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/shoppingCenter.css">
+
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/afterShopping.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="js/wx_share.js"></script>
+    <title>校长堡</title>
+</head>
+<body>
+	<div id="wrapper">
+        <div class="overlay"></div>
+        <!-- 侧边 -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav" id="leftNav">
+                <!-- <li class="sidebar-brand">
+                    <img src="./img/pome/logo.png" style='width: 1rem;height: 1rem;position: static'>
+                    <span style='font-size: .3rem'>18225862311</span>
+                </li>
+                <li class='remaining'>
+                    <span>剩余堡币 : 1999</span>
+                    <button>立即充值</button>
+                </li>
+                <li class='remaining1'>
+                    <span>赠送堡币 : 1999</span>
+                </li> -->
+                <li class='itemList'>
+                    <a onclick = "handleGoToRouter('myOrder.html')">
+                        <img src="img/pome/dingdan.png">
+                        <span>我的订单</span>
+                    </a>
+                </li>
+                <li class='itemList'>
+                    <a  onclick = "handleGoToRouter('collection.html')">
+                        <img src="img/pome/shoucang.png">
+                        <span>我的收藏</span>
+                    </a>
+                </li>
+                <li class='itemList'>
+                    <a onclick = "handleGoToRouter('myComments.html')">
+                        <img src="img/pome/pinglun.png">
+                        <span>我的评论</span>
+                    </a>
+                </li>
+                <li class='itemList'>
+                    <a  onclick = "handleGoToRouter('watchHistory.html')">
+                        <img src="img/pome/jilu.png">
+                        <span>观看历史</span>
+                    </a>
+                </li>
+                <li class='itemList'>
+                    <a  onclick = "handleGoToRouter('myCoupons.html')">
+                        <img src="img/pome/youhui.png">
+                        <span>我的优惠券</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- 侧边栏 -->
+
+        <!-- 头部 -->
+        <div id="page-content-wrapper">
+            <div class="topTitle" style='text-align: left'>
+                <div  class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+                    <img src="./img/pome/logo.png" style='width: 1rem;height: 1rem;position: static'>
+                    <span style='font-size: .3rem'></span>
+                    <p style='color:#fff;font-size: .45rem;display: inline-block;margin-left: 1.3rem'>商城中心</p>
+                </div>
+                <button onclick="handleshow()" class="nav-mobile-button">
+                    <img src="img/more_black.png">
+                </button>
+            </div>
+            <div  class="menuBar" >
+                <ul id="listMenu" class="list-unstyled" style="display: none">
+                    <li><a onclick="goIndex()">首页</a></li>
+                    <li><a onclick="goInstitutePoem()">艾诗学院</a></li>
+                    <li><a onclick="goShoppingCenter()">商城中心</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 头部效果 -->
+        <div class=' mainBody'>
+            <div class="product">
+                    <div>
+                        <!--自研专区-->
+                        <div class="lineBox">
+                            <h4>自研项目</h4>
+                            <div class="line1" id="selfRes">
+                                <div onclick="handleDetails()">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--行业服务专区-->
+                        <div class="lineBox" >
+                            <h4>行业服务专区</h4>
+                            <div class="line1"id="service">
+                                <div>
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--课程专区-->
+                        <div class="lineBox">
+                            <h4>课程专区</h4>
+                            <div class="line2" id="lesson">
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a onclick="handleAddContent(3)"><h6>查看更多</h6></a>
+                        </div>
+                        <!--教具/教材专区-->
+                        <div class="lineBox">
+                            <h4>教具/教材专区</h4>
+                            <div class="line2" id="teach">
+                                <div>
+                                    <div>
+                                        <img src="img/pic.jpg">
+                                    </div>
+                                    <h5>图说有道</h5>
+                                    <p>快速提高儿童认知语言能力快速快速...</p>
+                                    <div>
+                                        <span>￥999</span>
+                                        <span>￥1800</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        <div>
+                                            <img src="img/pic.jpg">
+                                        </div>
+                                        <h5>图说有道</h5>
+                                        <p>快速提高儿童认知语言能力快速快速...</p>
+                                        <div>
+                                            <span>￥999</span>
+                                            <span>￥1800</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <a onclick="handleAddContent(2)">
+                                <h6>查看更多</h6>
+                            </a>
+                        </div>
+                    </div>
+               </div>
+        </div>
+    </div>
+    <div class='beforShare'>
+            <div class="modal fade" id="mymodalShare">
+                <div class="modal-dialog">
+                    <div class="modal-content" >
+                        <div class="modal-body" >
+                            <p>校长堡送你新春福袋</p>
+                            <p>线上课程免费听</p>
+                            <p>给你一次华丽的蜕变</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class='botLive' onclick="Tool.modalClose('#mymodalShare')">知道了</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- /#wrapper -->
+	
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript">
+    var afterInstitutePoemURL = search();
+    var userInfo = getUserInfo();//获取用户信息
+    console.log(userInfo)
+    // if (!userInfo) { 
+    //     login('institutePoem');
+    // }
+    // 用户名   用户id  用户充值堡币  赠送堡币      电话      is校长        is教师      项目id
+    var { userName, id, rechargePrice, givePrice, phone, isCooperation, isTeacher, projectId } = userInfo;//对象解构 用户信息
+    $(function () { 
+        // Tool.modalOpen('#mymodalShare'); 
+        var userphone = phone.substring(0, 3) + '****' + phone.substring(7);
+        var htmlUserInfo = `
+                <li class="sidebar-brand">
+                    <img src="./img/pome/logo.png" style='width: 1rem;height: 1rem;position: static'>
+                    <span style='font-size: .4rem'>${userphone}</span>
+                </li>
+                <li class='remaining'>
+                    <span>剩余堡币 : ${rechargePrice}</span>
+                    <button onclick = "handleGoToRouter('topUp.html')">立即充值</button>
+                </li>
+                <li class='remaining1'>
+                    <span>赠送堡币 : ${givePrice}</span>
+                </li>    `;
+        $('#leftNav').prepend(htmlUserInfo);//渲染侧边栏导航
+        $('.animated').html(//头部电话号码
+                            `<img src="./img/pome/logo.png" style='margin-left:.2rem;width: 1rem;height: 1rem;position: static'>
+                            <span style='font-size: .3rem'>${userphone}</span>
+                            <p style='color:#fff;font-size: .45rem;display: inline-block;margin-left: 1.3rem'>商城中心</p>`);
+            });
+    function handleshow() {//显示右侧
+        if ($("#listMenu").css("display") == 'none') {
+
+            $("#listMenu").css("display", "block");//show的display属性设置为block（显示）
+
+        } else {
+
+            $("#listMenu").css("display", "none");
+
+        }
+    }
+    $('.hamburger').click(function(){
+        $("#listMenu").css("display", "none");
+    })
+		$(document).ready(function () {
+		  var trigger = $('.hamburger'),
+		      overlay = $('.overlay'),
+		     isClosed = false;
+
+		    trigger.click(function () {
+		      hamburger_cross();      
+		    });
+
+		    function hamburger_cross() {
+
+		      if (isClosed == true) {          
+		        overlay.hide();
+		        trigger.removeClass('is-open');
+		        trigger.addClass('is-closed');
+		        isClosed = false;
+		      } else {   
+		        overlay.show();
+		        trigger.removeClass('is-closed');
+		        trigger.addClass('is-open');
+		        isClosed = true;
+		      }
+		  }
+		  
+		  $('[data-toggle="offcanvas"]').click(function () {
+		        $('#wrapper').toggleClass('toggled');
+		  });  
+		});
+	</script>
+</body>
+</html>

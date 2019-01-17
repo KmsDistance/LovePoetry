@@ -1,0 +1,112 @@
+
+/* 没有内容 */
+.OrderBox1{
+    text-align: center;
+    padding-top: 2.5rem;
+    background-color: #f3f3fb;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
+
+.textBox p:first-child{
+    /* display:inline-block; */
+    margin-top: .4rem;
+    font-size: .35rem;
+    color: #999999;
+}
+.textBox p:last-child{
+    display:inline-block;
+    font-size: .35rem;
+    color: #999999;
+}
+.textBox p:last-child a{
+    color: #29A7FF;
+    font-size: .35rem;
+}
+
+
+.collection{
+    /* margin-top: .2rem; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .4rem .4rem;
+    background-color: #f3f3fb;
+    margin-bottom: .4rem;
+    flex-wrap: wrap;
+}
+.collection img{
+    width: 3rem;
+}
+.collection div h5{
+    font-size: .35rem;
+    color: #666666;
+    margin-bottom: .2rem;
+}
+.collection div span{
+    color: #999999;
+    font-size: .3rem;
+}
+.collection div p{
+    margin-top: .1rem;
+    color: #ff511e;
+    font-size: .35rem;
+}
+.moreBtn{
+    color: #fff;
+    font-size: .37rem;
+    width:1.73rem;
+height:0.69rem;
+background:linear-gradient(90deg,rgba(106,201,244,1),rgba(66,173,248,1));
+border-radius: 4px;
+}
+/* 弹框 */
+.modal-dialog{
+    margin: 5rem .8rem 3rem .5rem ;
+}
+.modal-footer,
+.modal-header{
+    border: none;
+}
+.modal-header{
+    background-color:#2BA8FF;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    min-height: 1rem
+}
+.modal-header h4{
+    font-size: .5rem;
+    color: #ffffff;
+    margin: 0;
+}
+.modal-header span{
+    position: absolute;
+    right: .6rem;
+    top: .2rem;
+    color: #ffffff;
+    font-size: .5rem;
+}
+.modal-body{
+    text-align: center;
+    padding: 15px 35px;
+}
+.modal-body p{
+    line-height: .6rem;
+    font-size: .35rem;
+    color: #666666;
+    /* text-align: left; */
+}
+.modal-footer{
+    text-align: center;
+    padding-top: 0;
+}
+.modal-footer button{
+    background:linear-gradient(90deg,rgba(106,201,244,1),rgba(66,173,248,1));
+    width:3rem;
+    height:0.7rem;
+    font-size: .35rem;
+    color: #fff;
+    border-radius: 4px;
+}

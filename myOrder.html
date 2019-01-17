@@ -1,0 +1,199 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1" />
+   <meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+   <link rel="stylesheet" href="css/bootstrapValidator.min.css"> 
+   <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/myOrder.css">
+
+   <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+   <script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+   <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+   <script src="js/layer/layer.js"></script>
+   <script src="js/bootstrapValidator.min.js"></script>
+   <script src="js/util.js"></script>
+   <script src="js/main.js"></script>
+   <script src="js/myOrder.js"></script>
+   <title>我的订单</title>
+</head>
+<body>
+    <!-- 头部 -->
+    <div class='OrderTitle'> 
+        <ul class='list-unstyled list-inline titleBox'>
+            <li onclick="getOrder(0)" class='active'><a>全部</a></li>
+            <li onclick="getOrder(1)"><a>待付款</a></li>
+            <li onclick="getOrder(2)"><a>已付款</a></li>
+            <li onclick="getOrder(5)"><a>已取消</a></li>
+        </ul>
+    </div>
+    <div class='OrderBox1' id="OrderBox1" style='display: none'>
+        <img src="img/pome/kong.png" style='width: 1.5rem;'>
+        <div class='textBox'>
+            <p>您还没有订单</p>
+            <p >快去<a onclick="goInstitutePoem()">艾诗学院</a>看看吧</p>
+        </div>
+    </div>
+    <!-- 内容 -->
+    <!-- 未支付 -->
+    <div class='OrderBox' id="myOrderDetails">
+        <!-- <div> 
+            <p>2018-08-11 06:39 订单号：11408457855</p>
+            <div class='order'>
+                <div>
+                    <img src="img/pome/11.png">
+                </div>
+                <div>
+                    <h5>如何打造名师系列课程</h5>
+                    <p>剩余名额：3人</p>
+                    <p>报名倒计时：00:12:59</p>
+                    <span>订单取消倒计时：00:12:59</span>
+                </div>
+            </div>
+            <div class='payMoneyPrice'>
+                <p>实付: <span>199堡币</span></p>
+                <a href="# ">立即支付</a>
+            </div>
+        </div> -->
+        <!-- 已支付 查看劵码-->
+        <!-- <div>
+            <p>2018-08-11 06:39 订单号：11408457855</p>
+            <div class='order'>
+                <div>
+                    <img src="img/pome/11.png">
+                </div>
+                <div>
+                    <h5>如何打造名师系列课程</h5>
+                    <p>形式：线下</p>
+                    <p>实际支付：99.9堡币</p>
+                    <p>支付方式：堡币</p>
+                    <span>开课时间：2019-01-10</span>
+                </div>
+            </div>
+            <div class='payMoneyPrice'>
+                <p>实付: <span>99堡币</span></p>
+                <a href="# ">查看劵码</a>
+            </div>
+        </div> -->
+        <!-- 点播 -->
+        <!-- <div>
+            <p>2018-08-11 06:39 订单号：11408457855</p>
+            <div class='order'>
+                <div>
+                    <img src="img/pome/11.png">
+                </div>
+                <div>
+                    <h5>如何打造名师系列课程</h5>
+                    <p>形式：点播</p>
+                    <p>实际支付：99.9堡币</p>
+                    <p>支付方式：支付宝</p>
+                </div>
+            </div>
+            <div class='payMoneyPrice'>
+                <p>实付: <span>99.9堡币</span></p>
+                <a href="# ">立即播放</a>
+            </div>
+        </div> -->
+        <!-- 团报 -->
+        <!-- <div>
+            <div class='massMsg'>
+                <p>2018-08-11 06:39 订单号：11408457855</p>
+                <a onclick="Tool.modalOpen('#mymodalUser')">修改团报信息</a>
+            </div>
+            <div class='order'>
+                <div>
+                    <img src="img/pome/11.png">
+                </div>
+                <div>
+                    <h5>如何打造名师系列课程</h5>
+                    <p>形式：线下 &nbsp; &nbsp; &nbsp; 团报：3人</p>
+                    <p>实际支付：99.9堡币</p>
+                    <span>开课时间：2019-01-10</span>
+                </div>
+            </div>
+            <div class='payMoneyPrice'>
+                <p>实付: <span>99堡币</span></p>
+                <a href="#">查看券码</a>
+            </div>
+        </div> -->
+        <!-- 已取消 -->
+        <!-- <div>
+            <p>2018-08-11 06:39 订单号：11408457855</p>
+            <div class='order'>
+                <div>
+                    <img src="img/pome/11.png">
+                </div>
+                <div>
+                    <h5>如何打造名师系列课程</h5>
+                    <p>剩余名额：3人</p>
+                    <p>报名倒计时：00:12:59</p>
+                    <span>已取消</span>
+                </div>
+            </div>
+            <div class='payMoneyPrice'>
+                <p>实付: <span>199堡币</span></p>
+                <span class='pq'>已取消</span>
+            </div>
+        </div> -->
+    </div>
+    <!-- 尾部返回 -->
+    <div class='footerBox'>
+        <div  onclick='goBack()'>
+            <img src="img/pome/zuo.png">
+        </div>
+        <div>
+            <img src="img/pome/you.png">
+        </div>
+    </div>
+    <!-- 弹框 -->
+    <div class='right'>
+        <div class="modal fade" id="mymodalUser">
+            <div class="modal-dialog" style='margin-top: 4rem'>
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <span onclick="Tool.modalClose('#mymodalUser')">x</span>
+                    </div>
+                    <div class="modal-body" id="bulkUser">
+                        <p class='companion'>请填写其他同伴的姓名、手机号</p>
+                        <p class='companion'>（平台将会进行信息保密）</p>
+                        <div id='massdataList'>
+                            <!--<div class='companionMsg'>
+                                <div>同伴1</div>
+                                <div>
+                                    <input type="text" placeholder="请输入姓名" >
+                                </div>
+                                <p  style='display:none'>请输入正确的姓名！</p>
+                            </div>
+                             <div class='companionMsg'>
+                                <div></div>
+                                <div>
+                                    <input type="text" placeholder="请输入手机号">
+                                </div>
+                                <p style='display:none'>请输入正确的手机号！</p>
+                            </div>
+                            <div class='companionMsg'>
+                                <div>同伴2</div>
+                                <div>
+                                    <input type="text" placeholder="请输入姓名">
+                                </div>
+                                <p style='display:none'>请输入正确的姓名！</p>
+                            </div>
+                            <div class='companionMsg'>
+                                <div></div>
+                                <div>
+                                    <input type="text" placeholder="请输入手机号">
+                                </div>
+                                <p style='display:none'>请输入正确的手机号！</p>
+                            </div> -->
+                        </div>
+                        <div class="modal-footer">
+                            <button id="btnClose">确认修改</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

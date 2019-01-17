@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css">
+    <!-- <link rel="stylesheet" href="css/base.css"> -->
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="js/bootstrapValidator.min.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="./js/wx_share_success.js"></script>
+    
+    <title>支付成功</title>
+    <style>
+        div{
+            text-align: center;
+        }
+        /* div>img{
+            width: 1.89rem;
+            height: auto;
+        } */
+        h4{
+            font-size: .5rem;
+            color: #333333;
+            margin-top: .6rem;
+            /* margin-bottom: 2rem; */
+        }
+
+        button{
+            border: none;
+            outline: none;
+            background-color:transparent;
+            text-decoration: underline
+
+        }
+        .codeBox{
+            padding: .6rem;
+            display: inline-block;
+            width: 8rem;
+            height: 10rem;
+            /* background: url('img/code/border2x.png'); */
+            background: url('img/code/bg23.png') no-repeat;
+            background-size: cover;
+
+        }
+        .codeBox p{
+            font-size: .5rem;
+            color: #333333;
+            text-align: left;
+            margin-bottom: .1rem;
+        }
+        .codeBox span{
+            display: block;
+            color: #29A8FF;
+            font-size: .5rem;
+            margin-bottom: .1rem;
+        }
+        .code{
+            display: inline-block;
+            background: url('img/code/border2x.png') no-repeat;
+            width: 3.6rem;
+            height: 3.6rem;
+            background-size: cover;
+            line-height: 3.6rem;
+        }
+        .code img{
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+        hr{
+            width: 85%;
+        }
+        .textBox{
+            margin: 0;
+            text-align: center;
+        }
+        .textBox p{
+            display: inline-block;
+            font-size: .48rem;
+            color: #333333;
+            padding-left: .35rem;
+        }
+        /* 尾部返回 */
+.footerBox{
+    display: flex;
+    height: 1.5rem;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    line-height: 1.5rem;
+    justify-content: center;
+    border-top: .5px solid #f3f3fb;
+}
+.footerBox div{
+    width: 31%;
+    text-align: center;
+}
+.footerBox img{
+    width: .22rem;
+}
+.modal{
+        text-align: center;
+        margin: 0
+    }
+    .modal-dialog{
+        margin: 3rem 0 0 0 ;
+        text-align: center;
+        width: 8rem;
+        display: inline-block;
+    }
+    .modal-footer,
+    .modal-header{
+        border: none;
+    }
+    .modal-header span{
+        position: absolute;
+        right: .6rem;
+        top: .2rem;
+        color: #ffffff;
+        font-size: .5rem;
+    }
+    .modal-content{
+        display: inline-block;
+        background: url('img/bj2121.png') no-repeat;
+        width: 7rem;
+        height: 8rem;
+        background-size: 7rem 8rem;
+    }
+    #mcover{ 
+        position: fixed; 
+        top:0;
+          left:0; width:100%; 
+          height:100%;
+          background:rgba(0, 0, 0, 0.4);  
+          display:none;
+          z-index:20000;}
+    #mcover img {position: fixed;right: 18px;top:5px;
+        width: 5rem;z-index:20001;}
+    </style>
+</head>
+<body>
+    <div style='margin: 0' >
+        <div style='margin-top: 1.5rem;'>
+            <img src="img/gou.png"  style='width: 1.89rem;'> 
+            <h4>支付成功</h4>
+        </div>
+    </div>
+    <!-- 尾部返回 -->
+    <div class='footerBox'>
+        <div onclick='goBack()'>
+            <img src="img/pome/zuo.png">
+        </div>
+        <div>
+            <img src="img/pome/you.png">
+        </div>
+    </div>
+    <div id="mcover" style="display: none">
+            <img src="img/share.png">
+        </div>
+    <div class="modal fade" id="mymodal">
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <div class="modal-body" style="text-align: center;padding:0;">
+                    <div style='min-height: 4.5rem'></div>
+                    <p style="font-size:.5rem;color:#666;margin-bottom: 5px;">恭喜您！</p>
+                    <p style="font-size:.35rem;color:#666;margin-bottom: 5px;padding: 0 .8rem">分享课程邀请好友一起来学习，艾诗学院送您价值99元全场代金券。</p>
+                </div>
+                <div class="modal-footer" style='margin: 0;text-align: center;padding-top: 5px;position: relative'>
+                    <button style='font-size: .48rem;color: #ffffff;
+                            background: url(img/btnnn.png) no-repeat;
+                            width: 6rem;height: 1rem;
+                            background-size: 6rem 1rem;
+                            text-decoration: none' onClick="document.getElementById('mcover').style.display='block';">立即分享</button>
+                    <button style='position: absolute;bottom: -75%;left: 43%' onclick="handleClose()">
+                        <img src="img/cj.png" style='width: .6rem;'>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <div class="modal fade" id="mymodal1">
+            <div class="modal-dialog">
+                <div class="modal-content" >
+                    <div class="modal-body" style="text-align: center;padding:0;">
+                        <div style='min-height: 4.8rem'></div>
+                        <p style="font-size:.5rem;color:#666;margin-bottom: 5px;">分享成功！</p>
+                        <p style="font-size:.35rem;color:#666;margin-bottom: 5px;">代金券可在
+                            <span style='color: #e72409'>[我的代金券]</span>内查看</p>
+                    </div>
+                    <div class="modal-footer" style='margin: 0;text-align: center;padding-top: 5px;position: relative;'>
+                        <button onclick="handleClose1()" style='font-size: .48rem;color: #ffffff;
+                                background: url(img/btnnn.png) no-repeat;
+                                width: 6rem;height: 1rem;background-size: 6rem 1rem;text-decoration: none'>知道了</button>
+                        <button style='position: absolute;left: 40%;bottom: -75%;' onclick="handleClose1()">
+                            <img src="img/cj.png" style='width: .6rem;'>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+</body>
+</html>
+<script>
+    $(function(){
+        $("#mymodal").modal("toggle");
+        $('#mcover').show();
+    })
+    $('#mcover').click(function(){
+        $('#mcover').hide();
+        handleClose();
+    })
+     // 关闭弹框
+     function handleClose(){
+        $("#mymodal").modal("toggle").hide();
+    }
+    function handleClose1(){
+        $("#mymodal1").modal("toggle").hide();
+    }
+    function goBack(){
+        history.go(-1);
+    }
+    
+</script>

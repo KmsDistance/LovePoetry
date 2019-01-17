@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/shoppingCenter.css">
+
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/util.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="js/bootstrapValidator.min.js"></script>
+    <script src='js/main.js'></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="js/wx_share.js"></script>
+    <title>找好项目，到校长堡</title>
+    <!-- 商城中心 -->
+    <style>
+        .container{
+            margin-top: 1.6rem;
+            margin-bottom: 2rem;
+        }
+        /*弹框3*/
+        #mymodal3 .modal-dialog{
+            margin: 5rem .8rem 3rem .5rem ;
+        }
+        #mymodal3 .modal-content{
+            background-color: #ffffff;
+        }
+        #mymodal3 .modal-header{
+            border: none;
+        }
+        #mymodal3 .modal-header{
+            min-height: .6rem;
+            padding: .2rem;
+            text-align: center;
+            position: relative;
+        }
+        #mymodal3 .modal-header span{
+            display: inline-block;
+            width: .4rem;
+            height: .4rem;
+            position: absolute;
+            right: .6rem;
+            top: .2rem;
+            color: #333333;
+            font-size: .5rem;
+        }
+        #mymodal3 .modal-body{
+            text-align: center;
+            color: #333333;
+            padding-bottom: .6rem;
+        }
+        #mymodal3 .modal-body p{
+            font-size: .45rem;
+        }
+        #mymodal3 .modal-body span{
+            font-size: .5rem;
+        }
+        #mymodal3 .modal-footer .btn1{
+            background-color: #1E9FFF;
+            width: 2rem;
+            height: 1rem;
+            border-radius: 4px;
+            color: #FFFFFF;
+        }
+
+        /*弹框4*/
+        #mymodal4 .modal-content{
+            background-color: #FFFFFF;
+        }
+        #mymodal4 .modal-content .modal-header{
+            background-color: #1E9FFF;
+            /*padding-bottom: 1.3rem;*/
+            /*border-radius: 6px;*/
+
+        }
+        #mymodal4 .modal-content .modal-body{
+            position: relative;
+        }
+        #mymodal4 .modal-content .modal-body .line2,
+        #mymodal4 .modal-content .modal-body .line3,
+        #mymodal4 .modal-content .modal-body .line4{
+            background-color: #FFFFFF;
+            border: 1px solid #c2c2c2;
+            border-radius: 4px;
+        }
+        #mymodal4 .modal-content .modal-body .line4 span,
+        #mymodal4 .modal-content .modal-body .line4 select{
+            color: #999999;
+            font-size: .4rem;
+            margin-right: .3rem;
+        }
+        #mymodal4 .modal-content .modal-body .line4 select{
+            border: none;
+            outline: none;
+            width: 55%;
+            margin-right: 0;
+            text-align: center;
+        }
+        #mymodal4 .modal-content .modal-body .line4 select option{
+            width: 50%;
+            text-align: center;
+        }
+        #mymodal4 .modal-content .modal-body .line2{
+            /*margin-top: .7rem;*/
+        }
+        #mymodal4 .modal-content .modal-body .line2 input,
+        #mymodal4 .modal-content .modal-body .line3 input{
+            color: #999999;
+        }
+        #mymodal4 .modal-content .modal-body .line2 input::placeholder,
+        #mymodal4 .modal-content .modal-body .line3 input::placeholder{
+            color: #999999;
+        }
+        #mymodal4 .modal-content .modal-footer{
+            text-align: center;
+        }
+        #mymodal4 .modal-content .modal-footer .btn1{
+            background-color: #1E9FFF;
+            width: 70%;
+            color: #FFFFFF;
+            border-radius: 4px;
+            font-size: .4rem;
+        }
+        .modal{
+            width: 100%;
+        }
+        .modal-dialog{
+            margin: 5rem 0 0 0;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+        .modal-content{
+            display: inline-block;
+            width: 85%;
+            background-color: #44b0f8;
+        }
+        .modal-footer,
+        .modal-header{
+            border: none;
+        }
+        .modal-header{
+            text-align: center;
+            position: relative;
+            background-color: #44b0f8;
+        }
+        .modal-header h4{
+            font-size: .5rem;
+            color: #ffffff;
+            margin: 0;
+        }
+        .modal-header span{
+            position: absolute;
+            right: .6rem;
+            top: .35rem;
+            color: #ffffff;
+            font-size: .5rem;
+        }
+        .modal-body{
+            padding-bottom: .2rem;
+            text-align: center;
+        }
+        .modal-body div{
+            padding-left: .4rem;
+            text-align: left;
+            display: inline-block;
+            margin-bottom: .4rem;
+            width: 90%;
+            height: 1.2rem;
+            background-color: #68bdfa;
+            line-height: 1.2rem;
+        }
+        .modal-body div input{
+            height: 1rem;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            padding-left: .3rem;
+            color: #ffffff;
+            font-size: .4rem;
+        }
+        .modal-body div .phoneInput{
+            width: 70%;
+        }
+        .modal-body div .code{
+            width: 100%;
+        }
+        .modal-body div .img1{
+            width: .53rem;
+            height: .56rem;
+        }
+        .modal-body div .img2{
+            width: .55rem;
+            height: .72rem;
+        }
+        .modal-body div .img3{
+            width: .48rem;
+            height: .72rem;
+        }
+        .modal-body .nth2{
+            background-color: transparent;
+            padding: 0;
+            line-height: 1.2rem;
+        }
+        .modal-body .nth2 div .code{
+            width: 80%;
+        }
+        .modal-body .nth2 div{
+            background-color: #68bdfa;
+            display: inline-block;
+            width: 59%;
+        }
+        .modal-body .nth2 button{
+            background-color: #ffffff;
+            height: 1.2rem;
+            border-radius: 1.2rem;
+            line-height: 1.2rem;
+            color: #68bdfa;
+            font-size: .4rem;
+            width: 35%;
+        }
+        .modal-body div input::placeholder{
+            color: #ffffff;
+            font-size: .4rem;
+        }
+        .modal-footer{
+            padding-top: 0;
+            text-align: center;
+        }
+        .modal-footer button{
+            font-size: .4rem;
+            width: 90%;
+            height: 1.2rem;
+            background-color: #ffffff;
+            color: #44b0f8;
+            border-radius: 1.2rem;
+            margin-bottom: .2rem;
+        }
+        .modal-footer div{
+            text-align: right;
+            padding-right: .5rem;
+        }
+        .modal-footer div a{
+            color: #ffffff;
+            font-size: .35rem;
+            text-decoration: none;
+        }
+        .modal-footer div a:visited{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="product">
+    <div>
+        <div class="topTitle" style='text-align: left'>
+            <img  onclick="handleMymodalLogin()" src="./img/pome/logo.png" style='margin-left:.2rem; width: 1rem;height: 1rem;position: static'>
+            <span style='font-size: .3rem' onclick="handleMymodalLogin()">未登录</span>
+            <div style='display: inline-block;width: 5.8rem;text-align: center'>
+                <p style='color:#fff;font-size: .45rem'>商城中心</p>
+            </div>
+            <button onclick="handleshow()" class="nav-mobile-button">
+                <img src="img/more_black.png">
+            </button>
+        </div>
+        <div  class="menuBar">
+            <ul id="listMenu" class="list-unstyled" style="display: none">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="institutePoem.html">艾诗学院</a></li>
+                <li><a href="shoppingCenter.html">商城中心</a></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <!--自研专区-->
+        <div class="lineBox">
+            <h4>自研项目</h4>
+            <div class="line1" id="selfRes">
+                <!--<div onclick="handleDetails()">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                </div>
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>-->
+            </div>
+        </div>
+        <!--行业服务专区-->
+        <div class="lineBox" >
+            <h4>行业服务专区</h4>
+            <div class="line1"id="service">
+                <!--<div>
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                </div>
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>-->
+            </div>
+        </div>
+        <!--课程专区-->
+        <div class="lineBox">
+            <h4>课程专区</h4>
+            <div class="line2" id="lesson">
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <a onclick="handleAddContent(3)"><h6>查看更多</h6></a>
+        </div>
+        <!--教具/教材专区-->
+        <div class="lineBox">
+            <h4>教具/教材专区</h4>
+            <div class="line2" id="teach">
+                <!--<div>
+                    <div>
+                        <img src="img/pic.jpg">
+                    </div>
+                    <h5>图说有道</h5>
+                    <p>快速提高儿童认知语言能力快速快速...</p>
+                    <div>
+                        <span>￥999</span>
+                        <span>￥1800</span>
+                    </div>
+                </div>
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div>
+                            <img src="img/pic.jpg">
+                        </div>
+                        <h5>图说有道</h5>
+                        <p>快速提高儿童认知语言能力快速快速...</p>
+                        <div>
+                            <span>￥999</span>
+                            <span>￥1800</span>
+                        </div>
+                    </a>
+                </div>-->
+            </div>
+            <a onclick="handleAddContent(2)">
+                <h6>查看更多</h6>
+            </a>
+        </div>
+    </div>
+    <!--弹框3-->
+    <div class="modal fade" id="mymodal3">
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <div class="modal-body" >
+                    <p>请拨打电话</p>
+                    <span>400-667-8868</span>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn1" onclick="handleClose2()">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--弹框4-->
+    <div class="modal fade" id="mymodal4">
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <h4>加盟咨询</h4>
+                    <span onclick="handleClose3()">x</span>
+                </div>
+                <div class="modal-body" >
+                    <div class="line2">
+                        <img src="img/14.png" class="img1">
+                        <input type="text" placeholder="姓名" id="userName">
+                    </div>
+                    <div class="line3">
+                        <img src="img/shou.png" class="img2">
+                        <input type="text" placeholder="手机号" id="userPhone">
+                    </div>
+                    <div class="line4">
+                        <span>项目名称</span>
+                        <select id="itemName">
+                            <option id="itemName1">图说有道</option>
+                            <option>图说有道</option>
+                            <option>图说有道</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn1" onclick="consultation()">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="user">
+    <!-- 登录弹框 -->
+    <div class="modal fade" id="mymodalLogin">
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <h4>用户登录</h4>
+                    <span onclick="handleCloseLogin()">x</span>
+                </div>
+                <div class="modal-body" >
+                    <div>
+                        <img src="img/ren.png" class="img1">
+                        <input type="text" placeholder="请输入您的手机号" class="phoneInput" id="loginPhone" name="loginPhone">
+                    </div>
+                    <div>
+                        <img src="img/suo.png" class="img2">
+                        <input type="password" placeholder="请输入您的密码" class="phoneInput" id="loginPassword" name="loginPassword">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="login('shoppingCenter')">登录</button>
+                    <div>
+                        <a href="#" onclick="handleRegister('login')">没有账号？去注册</a>
+                        <a href="#" onclick="handleForget('login')" style="margin-left: 1.8rem">忘记密码?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 注册弹框 -->
+    <div class="modal fade" id="mymodalRegistered">
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <h4>用户注册</h4>
+                    <span onclick="handleCloseRegister()">x</span>
+                </div>
+                <div class="modal-body" >
+                    <div>
+                        <img src="img/ren.png" class="img1">
+                        <input type="text" placeholder="请输入您的手机号" class="phoneInput" id="regionPhone" name="regionPhone">
+                    </div>
+                    <div class="nth2">
+                        <div>
+                            <img src="img/phone.png" class="img3">
+                            <input type="text" placeholder="请输入验证码" class="code" id="regionCode" name="regionCode">
+                        </div>
+                        <button class="btn3 btn-1" onclick="sendCode()">获取验证码</button>
+                        <span class="btn3 ji-shi" style="display: none"></span>
+                        <button class="btn3 btn-2" onclick="sendCode()" style="display: none">重新获取验证码</button>
+                    </div>
+                    <div>
+                        <img src="img/suo.png"  class="img2">
+                        <input type="password" placeholder="请设置密码" class="phoneInput" id="regionPassword" name="regionPassword">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn4" onclick="region()">注册</button>
+                    <div>
+                        <a href="#" onclick="handleLogin('registered')">已有账号？去登录</a>
+                        <a href="#" onclick="handleForget('registered')" style="margin-left: 1.8rem">忘记密码?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 忘记密码 -->
+    <div class="modal fade" id="mymodalForget">
+		<div class="modal-dialog">
+			<div class="modal-content" >
+				<div class="modal-header">
+					<h4>修改密码</h4>
+					<span onclick="handleCloseForget()">x</span>
+				</div>
+				<div class="modal-body" >
+					<div>
+						<img src="img/ren.png" class="img1">
+						<input type="text" placeholder="请输入您的手机号" class="phoneInput" id="forgetPhone" name="forgetPhone">
+					</div>
+					<div class="nth2">
+                        <div>
+                            <img src="img/phone.png" class="img3">
+                            <input type="text" placeholder="请输入验证码" class="code" id="forgetCode" name="forgetCode">
+                        </div>
+                        <button class="btn3 btn-11" onclick="forgetCode()">获取验证码</button>
+                        <span class="btn3 ji-shi1" style="display: none"></span>
+                        <button class="btn3 btn-22" onclick="forgetCode()" style="display: none">重新获取验证码</button>
+                    </div>
+					<div>
+						<img src="img/suo.png"  class="img2">
+						<input type="password" placeholder="请设置新密码" class="phoneInput" id="forgetPassword" name="forgetPassword">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn4" onclick="forget()">确认修改</button>
+					<div>
+						<a href="#" onclick="handleLogin('forget')">已有账号？去登录</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<script>
+    function handleMymodal(){
+        $("#mymodal").modal("toggle");
+    }
+    function handleClose(){
+        $("#mymodal").modal("toggle").hide();
+    }
+    function handleshow() {
+        if ($("#listMenu").css("display") == 'none') {
+
+            $("#listMenu").css("display", "block");//show的display属性设置为block（显示）
+
+        } else {
+
+            $("#listMenu").css("display", "none");
+
+        }
+    }
+
+    $(function(){
+        $.ajax({
+            url:baseURL + 'mall/goods/goodsGroup',
+            type:'post',
+            success:function(res){
+                console.log(res);
+                if(res.status==200){
+                     dataTeach=res.teachList.data;
+                    var dataSelfRes=res.selfResList.data;
+                    var dataService=res.serviceList.data;
+                     dataLesson=res.courseList.data;
+                    console.log(dataSelfRes);
+                    var teachItem = '';//教具教材
+                    var lessonItem = ''//课程
+                    // 自研项目
+                    var serviceItem = ''//行业服务
+                    var selfResItem = '';
+                    for(i=0;i<dataTeach.length;i++){
+                        console.log(dataTeach[i].type);
+                        var mark = dataTeach[i].intro
+                        if(mark.length>15){
+                            mark = mark.substr(0,15)+ "..." ;
+                        }else{
+                            mark=mark;
+                        }
+                        console.log();
+
+                        teachItem += `<div  onclick="handleDetails(${dataTeach[i].id})">
+                                <div>
+                                    <img src="${dataTeach[i].cover}">
+                                </div>
+                                <h5>${dataTeach[i].name}</h5>
+                                <p>${mark}</p>
+                                <div>
+                                    <span>￥${dataTeach[i].price}</span>
+                                    <span>￥${dataTeach[i].originalPrice}</span>
+                                </div>
+                             </div>`
+                        }
+                    // 行业服务
+                    for(i=0;i<dataService.length;i++){
+                        console.log(dataService[i].type);
+                        var mark = dataService[i].intro
+                        if(mark.length>15){
+                            mark = mark.substr(0,15)+ "..." ;
+                        }else{
+                            mark=mark;
+                        }
+                        console.log();
+
+                        serviceItem += `<div  onclick="handleDetails(${dataService[i].id})">
+                                <div>
+                                    <img src="${dataService[i].cover}">
+                                </div>
+                                <h5>${dataService[i].name}</h5>
+                                <p>${mark}</p>
+                                <div>
+                                    <span>￥${dataService[i].price}</span>
+                                    <span>￥${dataService[i].originalPrice}</span>
+                                </div>
+                             </div>`
+                    }
+                    //课程
+                    for(i=0;i<dataLesson.length;i++){
+                        console.log(dataLesson[i].type);
+                        var mark = dataLesson[i].intro
+                        if(mark.length>20){
+                            mark = mark.substr(0,20)+ "..." ;
+                        }else{
+                            mark=mark;
+                        }
+                        console.log();
+
+                        lessonItem += `
+                            <div onclick="handleDetails(${dataLesson[i].id})">
+                                <div>
+                                    <img src="${dataLesson[i].cover}">
+                                </div>
+                                <h5>${dataLesson[i].name}</h5>
+                                <p>${mark}</p>
+                                <div>
+                                    <span>￥${dataLesson[i].price}</span>
+                                    <span>￥${dataLesson[i].originalPrice}</span>
+                                </div>
+                            </div>`
+                    }
+                    // 教具教材
+                    for(i=0;i<dataSelfRes.length;i++){
+                        // console.log(dataSelfRes[i].type);
+                        var mark = dataSelfRes[i].intro
+                        if(mark.length>20){
+                            mark = mark.substr(0,20)+ "..." ;
+                        }else{
+                            mark=mark;
+                        }
+                        // console.log();
+
+                        selfResItem += `
+                            <div onclick="handleDetails(${dataSelfRes[i].id})">
+                                <div>
+                                    <img src="${dataSelfRes[i].cover}">
+                                </div>
+                                <h5>${dataSelfRes[i].name}</h5>
+                                <p>${mark}</p>
+                                <div>
+                                    <span>￥${dataSelfRes[i].price}</span>
+                                    <span>￥${dataSelfRes[i].originalPrice}</span>
+                                </div>
+                            </div>`
+                    }
+                    $("#teach").html(teachItem);
+                    $("#lesson").html(lessonItem);
+                    $("#selfRes").html(selfResItem);
+                    $("#service").html(serviceItem);
+                }else{
+                    layer.msg("出故障了")
+                }
+            },
+            error:function(error){
+                console.log(error)
+            }
+        })
+        $.ajax({
+            type:"post",
+            url: baseURL + 'front/project/getComboboxProject',
+            success:function(res){
+                console.log(res.rows);
+                var itemList = res.rows;
+                var itemName = '';
+                for(var i=0;i<itemList.length;i++){
+                    itemName += `
+                    	<option id="itemName1" value="${itemList[i].id}">${itemList[i].projectName}</option>
+                    	`;
+                }
+                $('#itemName').html(itemName)
+            },
+            error:function(error){
+                console.log(error);
+            }
+        })
+    })
+    function consultation(){
+        var userId = sessionStorage.getItem("userId");
+        var userName = $("#userName").val();
+        var userPhone = $("#userPhone").val();
+        var itemName = $("#itemName").val();
+        console.log(userName);
+        console.log(itemName);
+        var reg=/^1[3-9][0-9]{9}$/;
+        var reg1 = /^[\u4e00-\u9fa5]{2,8}$/;
+        if (userName!=""&&reg1.test(userName)){
+            if (userPhone!=""&&reg.test(userPhone)){
+                $.ajax({
+                    type:"post",
+                    url: baseURL + 'front/project/consultationProject',
+                    data:{
+                        customerId:userId ,
+                        customerName:userName,
+                        customerPhone:userPhone,
+                        projectId:itemName,
+                    },
+                    success:function(res){
+                        console.log(res);
+                        if(res.status==200){
+                            layer.msg("提交成功！");
+                            $("#mymodal4").modal("toggle").hide();
+                        }else{
+                            layer.msg("提交失败！")
+                        }
+                    },
+                    error:function(error){
+                        console.log(error)
+                    }
+                })
+            }else{
+                layer.msg("您输入的手机号有误!")
+            }
+        }else{
+            layer.msg("请输入您的真实姓名!")
+        }
+    }
+    // 弹框4
+    function handleMymodal3(){
+        $("#mymodal4").modal("toggle");
+    }
+    function handleClose3(){
+        $("#mymodal4").modal("toggle").hide();
+    }
+    var teachListNumber = 2;
+    var courseListNumber = 2;
+    function handleAddContent(type){//1-教育教材，2-自研，3-课程  4-行业服务， 5-自营， 加载更多
+        console.log(dataLesson)
+        var page;
+        console.log(page)
+        if (type==2){
+            page = teachListNumber++;
+        }
+        else if (type==3){
+            page = courseListNumber++;
+        }
+
+        console.log(page)
+        $.ajax({
+            url:baseURL + 'mall/goods/goodsList?rows=2&page='+page+'&type='+type,
+            type:'post',
+            success:function(res){
+                console.log(page)
+                // console.log(res);
+                var moreLoad = res.rows;
+                var teachItem = '';//教具教材
+                var lessonItem = '';//课程
+                console.log(moreLoad);
+                for(i=0;i<moreLoad.length;i++){
+                    type1=moreLoad[0].type;
+                    console.log(type1)
+                    var mark = moreLoad[i].intro
+                    if(mark.length>20){
+                        mark = mark.substr(0,20)+ "..." ;
+                    }else{
+                        mark=mark;
+                    }
+                    if(moreLoad[i].type==3){
+                        lessonItem += `
+                            <div onclick="handleDetails(${moreLoad[i].id})">
+                                <div>
+                                    <img src="${moreLoad[i].cover}">
+                                </div>
+                                <h5>${moreLoad[i].name}</h5>
+                                <p>${mark}</p>
+                                <div>
+                                    <span>￥${moreLoad[i].price}</span>
+                                    <span>￥${moreLoad[i].originalPrice}</span>
+                                </div>
+                            </div>`;
+                    }
+                    if(moreLoad[i].type==2){
+                        teachItem  += `
+                            <div onclick="handleDetails(${moreLoad[i].id})">
+                                <div>
+                                    <img src="${moreLoad[i].cover}">
+                                </div>
+                                <h5>${moreLoad[i].name}</h5>
+                                <p>${mark}</p>
+                                <div>
+                                    <span>￥${moreLoad[i].price}</span>
+                                    <span>￥${moreLoad[i].originalPrice}</span>
+                                </div>
+                            </div>`;
+                    }
+                }
+                $("#teach").append(teachItem);
+                $("#lesson").append(lessonItem);
+                if(res.rows.length!==0 && res.rows[0].type==3){
+                     dataLesson = dataLesson.concat(res.rows);
+                    page = courseListNumber++;
+                    console.log(dataLesson);
+                }else if(res.rows.length!==0 && res.rows[0].type==2){
+                    dataTeach  = dataTeach.concat(res.rows);
+                    page = teachListNumber++;
+                    console.log(dataTeach);
+                }else{
+                    layer.msg("没有更多了！")
+                }
+            },
+            error:function(error){
+                console.log(error)
+            }
+        })
+    }
+    function handleDetails(productId){
+        window.location='productDetails.html?id='+productId
+    }
+</script>

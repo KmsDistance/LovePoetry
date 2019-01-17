@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="./css/collection.css">
+
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="js/bootstrapValidator.min.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/collection.js"></script>
+    <title>我的收藏</title>
+</head>
+<body>
+    <div>
+        <div class='OrderBox1' id="OrderBox1"  style='display: none'>
+            <img src="img/pome/kong.png" style='width: 1.5rem;'>
+            <div class='textBox'>
+                <p>您还没有收藏</p>
+                <p >快去<a onclick="goInstitutePoem()">艾诗学院</a>看看吧</p>
+            </div>
+        </div>
+        <!-- 收藏内容 -->
+        <div id='collection'>
+             
+        </div>
+        <!-- 尾部返回 -->
+    <div class='footerBox'>
+        <div  onclick='goBack()'>
+            <img src="img/pome/zuo.png">
+        </div>
+        <div>
+            <img src="img/pome/you.png">
+        </div>
+    </div>
+    </div>
+    <!-- 已下架 -->
+    <div class="modal fade" id="mymodal">
+            <div class="modal-dialog">
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <span onclick="handleClose()">x</span>
+                    </div>
+                    <div class="modal-body" >
+                        <p>该课程报名已结束！</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class='botton'>知道了</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+<script>
+    function handleMymodal(){
+        $("#mymodal").modal("toggle");
+    }
+   function handleClose(){
+       $("#mymodal").modal("toggle").hide();
+   }
+</script>

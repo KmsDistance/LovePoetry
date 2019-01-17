@@ -1,0 +1,109 @@
+.topTitle img{
+    width: .21rem;
+    height: .35rem;
+    top: .6rem;
+    left: .3rem;
+}
+.topUp{
+    padding: 0 .5rem;
+    margin-top:1.8rem;
+}
+.topUp div p{
+    vertical-align: top;
+    margin: 0;
+    color: #666666;
+    font-size: .45rem;
+    width: 2rem;
+    display: inline-block;
+}
+.payMoney-type{
+    margin-top: .5rem;
+}
+.payType{
+    margin-top: .2rem;
+}
+.payType>.btnRadio{
+    display: flex;
+    justify-content: space-between;
+    padding-top: .3rem;
+    align-items: center;
+}
+.payType>.btnRadio div:first-child{}
+.payType>.btnRadio div:last-child{
+    margin-top: .3rem;
+}
+.payType>.btnRadio div:first-child img{
+    width: 2.5rem;
+    height: auto;
+}
+.payType>.btnRadio div:first-child .img1{
+    margin-left: .1rem;
+}
+.payType>.btnRadio div:last-child img{
+    width: .5rem;
+    height: .5rem;
+}
+/*.payType>.btnRadio .active>#imgShow1,*/
+/*.payType>.btnRadio .active>#imgShow3*/
+/*{*/
+    /*display: none;*/
+/*}*/
+/*.payType>.btnRadio .active>#imgShow,*/
+/*.payType>.btnRadio .active>#imgShow4*/
+/*{*/
+    /*display: inline-block;*/
+/*}*/
+.zhifu{
+    margin-top: .3rem;
+}
+.zhifu .payType1{
+    padding-left: .2rem;
+    display: inline-block;
+    width: 6.8rem;
+}
+.payType1 .choose{
+    display: inline-block;
+    margin-bottom: .3rem;
+}
+.payType1 .choose input{
+    width: 3.3rem;
+    border: 1px solid #e0e0e0;
+    height: .8rem;
+    padding-left: .2rem;
+    font-size: .4rem;
+}
+::placeholder{
+    font-size: .4rem;
+    color: #999999;
+}
+.payType1 .choose span{
+    color: #999999;
+    font-size: .35rem;
+}
+.choosePay ul{
+    margin: 0;
+}
+.choosePay ul li{
+    margin-right: .2rem;
+    font-size: .4rem;
+    margin-bottom: .2rem;
+    color: #666666;
+    width: 2.6rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    text-align: center;
+    border: 1px solid #e4e4e2;
+}
+.choosePay ul li.active{
+    border: 1px solid #29a8ff;
+    color: #29a8ff;
+    background-color: #f4fbff;
+}
+.btn1{
+    margin-top: 1.2rem;
+    background: url("../img/btn4.png") no-repeat;
+    background-size: cover;
+    width: 3.5rem;
+    height: 1rem;
+    font-size: .4rem;
+}

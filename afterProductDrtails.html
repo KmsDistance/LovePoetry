@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="./css/itemDetails.css">
+    <link rel="stylesheet" href="./css/productDetails.css">
+
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/bootstrapValidator.min.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="js/wx_share.js"></script>
+    <title>找好项目，到校长堡</title>
+    <!-- 商品详情 -->
+    <style>
+        .topTitle a>img{
+            width: .21rem;
+            height: .35rem;
+            top: .6rem;
+            left: .3rem;
+        }
+        .nav-mobile-button img{
+            width: .7rem;
+            height: .48rem;
+        }
+        .modal-dialog{
+            margin: 5rem 1.2rem 3rem 1.2rem ;
+        }
+        .modal-content{
+            background-color: #ffffff;
+        }
+        .modal-header,
+        .modal-footer{
+            border: none;
+        }
+        .modal-header{
+            min-height: .6rem;
+            padding: .2rem;
+            text-align: center;
+            position: relative;
+        }
+        .modal-header{
+
+        }
+        .modal-header span{
+            display: inline-block;
+            width: .4rem;
+            height: .4rem;
+            position: absolute;
+            right: .6rem;
+            top: .2rem;
+            color: #333333;
+            font-size: .5rem;
+        }
+        .modal-body{
+            padding: 20px 15px 15px;
+            text-align: left;
+            color: #333333;
+        }
+        .modal-body p{
+            font-size: .45rem;
+        }
+        .modal-body span{
+            font-size: .5rem;
+        }
+        .modal-footer{
+            padding-top: 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="topTitle">
+        <a href="#" onclick="goBack()">
+            <img src="./img/(%2011.png">
+        </a>
+        <span>商品详情</span>
+    </div>
+</div>
+<div class="container">
+    <div id="ad5" class="carousel slide" data-ride="carousel"
+         data-interval="3500" data-pause="null">
+        <div class="carousel-inner" id="imglist">
+            <!--<div class="item active">
+                <img src="img/banner.jpg"/>
+            </div>
+            <div class="item">
+                <img src="img/banner2.jpg"/>
+            </div>
+            <div class="item">
+                <img src="img/banner.jpg"/>
+            </div>-->
+        </div>
+        <ul class="carousel-indicators">
+            <li data-slide-to="0" data-target="#ad5" class="active"></li>
+            <li data-slide-to="1" data-target="#ad5" ></li>
+            <li data-slide-to="2" data-target="#ad5" ></li>
+        </ul>
+    </div>
+    <div class="itemDetails" id="itemDetails">
+        <!--<h4>图说有道</h4>
+        <div class="details-first-text">
+            <ul class="list-unstyled">
+                <li>
+                    <p>合作金额</p>
+                    <p class="price">￥0.2万~3万</p>
+                </li>
+                <li class="suitable">
+                    <p>适应机构</p>
+                    <p>幼儿园及各类培训机构</p>
+                </li>
+                <li class="suitable">
+                    <p>适学年龄</p>
+                    <p>3.5-15岁</p>
+                </li>
+                <li class="suitable">
+                    <p>教学方法</p>
+                    <p>动作记忆法</p>
+                </li>
+                <li class="suitable">
+                    <p>教学形式</p>
+                    <p>多媒体主题式教学</p>
+                </li>
+                <li class="suitable">
+                    <p>合作形式</p>
+                    <p class="plan">
+                        <a href="#" class="active">标准化方案</a>
+                        <a href="#">定制方案</a>
+                        <a href="#">短期方案</a>
+                    </p>
+                </li>
+            </ul>
+        </div>-->
+    </div>
+    <div class="itemDetails1" style="margin-bottom: .5rem">
+        <h4>商品详情</h4>
+        <div id="detailsContent"></div>
+    </div>
+    <div class="modal fade" id="mymodal">
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <div class="modal-body" >
+                    <p>手机暂不支持购买产品，请到校长堡官网购买！</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn1" onclick="handleClose()">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function handleMymodal(){
+    $("#mymodal").modal("toggle");
+    }
+    function handleClose(){
+    $("#mymodal").modal("toggle").hide();
+}
+    function goBack() {
+       window.location="afterShopping.html"
+    }
+
+    var url1 = search().id;
+    console.log(url1)
+    // 数据渲染
+    $(function(){
+        $.ajax({
+            url:baseURL + 'mall/goods/byId',
+            type:'post',
+            data:{"id":url1},
+            success:function(res){
+
+                var carousel = '';//页面轮播
+                var imgList = res.goodsImgs;
+                var cooperatesList = res.goodsCooperates;
+                console.log(res);
+                for(var i=0;i<imgList.length;i++){
+                    // console.log(imgList[0].url)
+                    if(i<1){
+                        carousel += `
+                            <div class="item active">
+                                <img src="${imgList[i].url}">
+                            </div>`;
+                    }else{
+                        carousel += `
+                            <div class="item">
+                                <img src="${imgList[i].url}">
+                            </div>`;
+                    }
+
+                }
+                $('#imglist').append(carousel);
+                var goodsLabels = res.goodsLabels;
+                minCount = res.minPurchaseNum;
+                var goodsList =`
+                    <h4>${res.name}</h4>
+                    <div class="details-first-text">
+                        <ul class="list-unstyled">`;
+                for(var i=0;i<goodsLabels.length;i++){
+                    if(i==0){
+                        goodsList+=`
+                        <li>
+                            <p>${goodsLabels[i].name}</p>
+                            <p class="price">${goodsLabels[i].content}</p>
+                        </li>`
+                    }else if(i==1){
+                        goodsList += `
+                            <li class="suitable">
+                                <p>适应机构</p>
+                                <p>幼儿园及各类培训机构</p>
+                            </li>`
+                    }else{
+                        goodsList+=`
+                        <li>
+                            <p>${goodsLabels[i].name}</p>
+                            <p>${goodsLabels[i].content}</p>
+                        </li>`
+                    }
+                }
+                goodsList += `
+                    <li class="suitable">
+                            <p>合作形式</p>
+                            <p class="plan">`
+                for(var i=0;i<cooperatesList.length;i++){
+                    cooperatesId = cooperatesList[i].id
+                    goodsList += `
+                         <a onclick="handleshow1(${cooperatesList[i].id})" id="active${cooperatesList[i].id}">${cooperatesList[i].name}</a>
+                         <input type="hidden" id="inputId${cooperatesList[i].id}" value="${cooperatesList[i].id}">
+                         <input type="hidden" id="inputPrice" value="${cooperatesList[i].price}">`;
+                }
+                goodsList+=`
+                            </p>
+                        </li>
+                        <li class="suitable">
+                            <p>数量</p>
+                            <p class="count">
+                                <a onclick="handleDescBuyNum()">-</a>
+                                <input type="text" value="${minCount}" id="input-num">
+                                <a onclick="handleAddBuyNum()">+</a>
+                                <span>件</span>
+                            </p>
+                        </li>
+                        <li class="payButton">
+                            <button  onclick="handleMymodal()" class="btn3">立即购买</button>
+                        </li>
+                    </ul>
+                </div>`;
+                // var count = $("#countBuy").val();
+                $("#itemDetails").html(goodsList);
+                $("#detailsContent").html(res.details);
+            },
+            error:function(error){
+                console.log(error);
+            }
+        })
+    })
+    function handleshow1(id){
+        console.log(id)
+        var inputId = $("#inputId"+id).val();
+        var inputPrice = $("#inputPrice").val();
+        console.log(inputId,inputPrice);
+        console.log($("#active"+id).val());
+
+        $("#active"+id).addClass("active");
+        $('#active'+inputId).siblings('a').removeClass("active");
+        $(".price").html(inputPrice)
+    }
+    function handleDescBuyNum(){//商品数量--
+        var count = $("#input-num").val();
+        if(count > minCount){
+            count--;
+            $("#input-num").val(count);
+        }else layer.msg('最低购买数不能低于'+minCount)
+    }
+    function handleAddBuyNum(){//商品数量+++
+        var count = $("#input-num").val();
+        count++
+        $("#input-num").val(count);
+    }
+</script>
+</html>
